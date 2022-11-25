@@ -10,16 +10,11 @@ class MyProtofolio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ScrollController _controller = ScrollController();
-    // WidgetsBinding.instance.addPostFrameCallback((_) {
-    //   _controller.jumpTo(
-    //     _controller.position.maxScrollExtent,
-    //   );
-    // });
+    ScrollController controller = ScrollController();
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
-        controller: _controller,
+        controller: controller,
         child: Column(
           children: const [
             Head(),

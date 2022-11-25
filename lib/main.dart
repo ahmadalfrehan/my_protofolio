@@ -1,11 +1,8 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:protofolio/config/themes.dart';
 import 'package:protofolio/presentation/my-protofolio.dart';
 
 void main() {
-
   runApp(const MyApp());
 }
 

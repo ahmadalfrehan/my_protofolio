@@ -44,20 +44,18 @@ class MyExperience extends StatelessWidget {
             ),
           ),
         ),
-        Expanded(
-          child: Column(
-            children: [
-              const SizedBox(height: 80),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _squareLogo(),
-                  _squareLogo(),
-                  _squareLogo(),
-                ],
-              ),
-            ],
-          ),
+        Column(
+          children: [
+            const SizedBox(height: 80),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _squareLogo(),
+                _squareLogo(),
+                _squareLogo(),
+              ],
+            ),
+          ],
         ),
       ],
     );

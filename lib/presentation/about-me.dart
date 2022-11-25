@@ -39,18 +39,16 @@ class AboutMe extends StatelessWidget {
                         style: TextStyleMyApp.textStyle6,
                       ),
                     ),
-                    Expanded(
-                      child: Container(
-                        height: 200,
-                        width: 200,
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/code.jpg'),
-                          ),
+                    Container(
+                      height: 200,
+                      width: 200,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/code.png'),
                         ),
-                        alignment: Alignment.bottomCenter,
-                        //  child: Text('Ahmad',style:TextStyleMyApp.textStyle1,),
                       ),
+                      alignment: Alignment.bottomCenter,
+                      //  child: Text('Ahmad',style:TextStyleMyApp.textStyle1,),
                     ),
                   ],
                 ),
