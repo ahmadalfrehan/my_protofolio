@@ -60,6 +60,6 @@ class TextStyleMyApp {
   static const TextStyle textStyle9 = TextStyle(
     color: colorDarkBlue,
     fontWeight: FontWeight.w600,
-    fontSize: 14,
+    fontSize: 18,
   );
 }

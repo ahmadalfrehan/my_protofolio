@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:protofolio/presentation/my-projects/my-projects.dart';
 
 import 'about-me.dart';
 import 'head/head.dart';
@@ -22,6 +23,7 @@ class MyProtofolio extends StatelessWidget {
             MyExperience(),
             SizedBox(height: 20),
             MySkills(),
+            MyProjects(),
           ],
         ),
       ),

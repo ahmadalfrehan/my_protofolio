@@ -8,51 +8,56 @@ class MyExperience extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.topCenter,
+    return Column(
       children: [
-        Container(
-          height: MediaQuery.of(context).size.height / 5,
-          width: MediaQuery.of(context).size.width,
-          decoration: const BoxDecoration(
-            color: colorHeadYellow,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                Stack(
-                  children: const [
-                    Text(
-                      'My Experience',
-                      style: TextStyleMyApp.textStyle8,
+        Stack(
+          alignment: Alignment.topCenter,
+          children: [
+            Container(
+              height: MediaQuery.of(context).size.height / 5,
+              width: MediaQuery.of(context).size.width,
+              decoration: const BoxDecoration(
+                color: colorHeadYellow,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Stack(
+                      children: const [
+                        Text(
+                          'My Experience',
+                          style: TextStyleMyApp.textStyle8,
+                        ),
+                        Text(
+                          'My Experience',
+                          style: TextStyleMyApp.textStyle5,
+                        ),
+                      ],
                     ),
-                    Text(
-                      'My Experience',
-                      style: TextStyleMyApp.textStyle5,
+                    const Spacer(),
+                    const Expanded(
+                      child: Text(
+                        'it was wonderfull to share my eperiences with',
+                        style: TextStyleMyApp.textStyle9,
+                      ),
                     ),
                   ],
                 ),
-                const Spacer(),
-                const Expanded(
-                  child: Text(
-                    'it was wonderfull to share my eperiences with',
-                    style: TextStyleMyApp.textStyle9,
-                  ),
-                ),
-              ],
+              ),
             ),
-          ),
-        ),
-        Column(
-          children: [
-            const SizedBox(height: 80),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            Column(
               children: [
-                _squareLogo(),
-                _squareLogo(),
-                _squareLogo(),
+                const SizedBox(height: 80),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    _squareLogo(),
+                    _squareLogo(),
+                    _squareLogo(),
+                  ],
+                ),
               ],
             ),
           ],
@@ -63,42 +68,55 @@ class MyExperience extends StatelessWidget {
 
   _squareLogo() {
     return Container(
-      height: 150,
+      height: 250,
       width: 100,
       decoration: const BoxDecoration(color: colorDarkBlue),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Center(
-            child: Text(
-              'Logo',
-              style: TextStyle(
-                color: Colors.white,
-              ),
+          const SizedBox(height: 50),
+          const Text(
+            'Logo',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 30,
             ),
           ),
-          //const Spacer(),
-          Row(
-            children: const [
-              Text(
-                'My Role',
-                style: TextStyle(
-                  color: Colors.white,
+          const SizedBox(height: 50),
+          //  const Spacer(),
+          Expanded(
+            child: Column(
+              children: [
+                Row(
+                  children: const [
+                    Text(
+                      'My Role',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-            ],
-          ),
-          Row(
-            children: const [
-              Expanded(
-                child: Text(
-                  'it was wonderfull to share my eperiences with',
-                  style: TextStyle(
-                    color: Colors.white,
+                Expanded(
+                  child: Row(
+                    children: const [
+                      Expanded(
+                        child: Text(
+                          'it was wonderfull to share my eperiences with',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),

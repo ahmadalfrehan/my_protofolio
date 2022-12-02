@@ -52,7 +52,6 @@ class AboutMe extends StatelessWidget {
                     ),
                   ],
                 ),
-
               ],
             ),
           ),
