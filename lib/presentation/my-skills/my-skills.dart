@@ -63,7 +63,8 @@ class _MySkillsState extends State<MySkills>
                         crossAxisCount:
                             MediaQuery.of(context).size.width > 480 ? 4 : 3,
                         crossAxisSpacing: 30,
-                        mainAxisExtent: 100,
+                        mainAxisExtent:
+                            MediaQuery.of(context).size.width > 480 ? 150 : 100,
                         mainAxisSpacing: 5,
                       ),
                       itemBuilder: (context, index) {
@@ -82,10 +83,10 @@ class _MySkillsState extends State<MySkills>
                               child: Image.asset(
                                 'assets/images/skills.png',
                                 width: MediaQuery.of(context).size.width > 480
-                                    ? 150
+                                    ? 90
                                     : 40,
                                 height: MediaQuery.of(context).size.width > 480
-                                    ? 150
+                                    ? 90
                                     : 40,
                               ),
                             ),
@@ -96,8 +97,8 @@ class _MySkillsState extends State<MySkills>
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontSize:
-                                      MediaQuery.of(context).size.width > 480
-                                          ? 25
+                                  MediaQuery.of(context).size.width > 480
+                                          ? 20
                                           : 13,
                                   color: colorWhite,
                                   fontWeight: FontWeight.w800,

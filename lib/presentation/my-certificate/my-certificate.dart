@@ -17,6 +17,8 @@ class _MyCertificateState extends State<MyCertificate> {
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
+          if (MediaQuery.of(context).size.width > 480)
+            const SizedBox(height: 100),
           Container(
             width: Get.width / 2,
             height: 8,
@@ -112,14 +114,25 @@ class _MyCertificateState extends State<MyCertificate> {
                             'Issued Dec 2021', () {
                       print('object');
                     }),
-                    const SizedBox(height: 50),
+                    const SizedBox(height: 20),
                   ],
-                ) // const SizedBox(height: 100)
+                ),
+        _verticalCircles(),
         ],
       ),
     );
   }
-
+  _verticalCircles() {
+    return SizedBox(
+      width: 150,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          for (var i = 0; i < 6; ++i) const CircleAvatar(radius: 3,backgroundColor: colorHeadYellow,),
+        ],
+      ),
+    );
+  }
   _myCertificate(
       String cerName, String image, String desc, Function() onPressed) {
     return Padding(
