@@ -43,6 +43,19 @@ class ContactUs extends StatelessWidget {
                 color: colorWhite, fontSize: 15, fontWeight: FontWeight.w400),
           ),
           const SizedBox(height: 50),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children:  [
+              Image.asset('assets/images/link.png'),
+              const SizedBox(width: 5),
+              const Icon(Icons.facebook, color: colorWhite),
+              const SizedBox(width: 5),
+              const Icon(Icons.telegram, color: colorWhite),
+              const SizedBox(width: 5),
+              Image.asset('assets/images/git.png')
+            ],
+          ),
+          const SizedBox(height: 50),
         ],
       ),
     );
