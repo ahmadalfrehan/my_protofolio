@@ -17,6 +17,12 @@ class _MyCertificateState extends State<MyCertificate> {
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
+          Container(
+            width: Get.width / 2,
+            height: 8,
+            decoration: BoxDecoration(
+                color: colorHeadYellow, borderRadius: BorderRadius.circular(8)),
+          ),
           const SizedBox(height: 50),
           Row(
             children: [
@@ -46,34 +52,69 @@ class _MyCertificateState extends State<MyCertificate> {
               ),
             ],
           ),
-          const SizedBox(
-            height: 50,
-          ),
-          _myCertificate(
-              'DCPC',
-              'dcpc',
-              'ICPC\n'
-                  'Issued Sep 2021', () {
-            print('object');
-          }),
-          const SizedBox(height: 50),
-          _myCertificate(
-              'Algorithmic Toolbox',
-              'algo',
-              ' UC San Diego\n'
-                  'Issued Dec 2020', () {
-            print('object');
-          }),
-          const SizedBox(height: 50),
-          _myCertificate(
-              'Google Ux',
-              'google',
-              'Google\n'
-                  'Issued Dec 2021', () {
-            print('object');
-          }),
-          const SizedBox(height: 50),
-          // const SizedBox(height: 100)
+          MediaQuery.of(context).size.width > 480
+              ? Column(
+                  children: [
+                    Row(
+                      children: [
+                        const SizedBox(height: 50),
+                        _myCertificate(
+                            'DCPC',
+                            'dcpc',
+                            'ICPC\n'
+                                'Issued Sep 2021', () {
+                          print('object');
+                        }),
+                        const SizedBox(height: 50),
+                        _myCertificate(
+                            'Algorithmic Toolbox',
+                            'algo',
+                            ' UC San Diego\n'
+                                'Issued Dec 2020', () {
+                          print('object');
+                        }),
+                        const SizedBox(height: 50),
+                      ],
+                    ),
+                    const SizedBox(height: 50),
+                    _myCertificate(
+                        'Google Ux',
+                        'google',
+                        'Google\n'
+                            'Issued Dec 2021', () {
+                      print('object');
+                    }),
+                  ],
+                )
+              : Column(
+                  children: [
+                    const SizedBox(height: 50),
+                    _myCertificate(
+                        'DCPC',
+                        'dcpc',
+                        'ICPC\n'
+                            'Issued Sep 2021', () {
+                      print('object');
+                    }),
+                    const SizedBox(height: 50),
+                    _myCertificate(
+                        'Algorithmic Toolbox',
+                        'algo',
+                        ' UC San Diego\n'
+                            'Issued Dec 2020', () {
+                      print('object');
+                    }),
+                    const SizedBox(height: 50),
+                    _myCertificate(
+                        'Google Ux',
+                        'google',
+                        'Google\n'
+                            'Issued Dec 2021', () {
+                      print('object');
+                    }),
+                    const SizedBox(height: 50),
+                  ],
+                ) // const SizedBox(height: 100)
         ],
       ),
     );
@@ -85,7 +126,7 @@ class _MyCertificateState extends State<MyCertificate> {
       padding: const EdgeInsets.only(left: 30),
       child: SizedBox(
         width: MediaQuery.of(context).size.width > 480
-            ? Get.width / 2
+            ? Get.width / 2.4
             : double.infinity,
         child: Stack(
           alignment: Alignment.centerLeft,
