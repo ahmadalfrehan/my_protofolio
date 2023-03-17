@@ -12,7 +12,7 @@ class TextStyleMyApp {
   static TextStyle textStyle2 = TextStyle(
     color: colorHeadYellow,
     fontWeight: FontWeight.w800,
-    fontSize: Get.width>480? 30:18,
+    fontSize: Get.width>480? 30:16,
   );
   static const TextStyle textStyle3 = TextStyle(
     color: colorHeadGrey,

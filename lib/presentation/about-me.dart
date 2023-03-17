@@ -1,10 +1,21 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:protofolio/config/textStyle.dart';
 
 import '../config/about.dart';
 
-class AboutMe extends StatelessWidget {
+class AboutMe extends StatefulWidget {
   const AboutMe({Key? key}) : super(key: key);
+
+  @override
+  State<AboutMe> createState() => _AboutMeState();
+}
+
+class _AboutMeState extends State<AboutMe> with SingleTickerProviderStateMixin {
+  late final AnimationController _controller =
+      AnimationController(vsync: this, duration: const Duration(seconds: 3))
+        ..repeat();
 
   @override
   Widget build(BuildContext context) {
@@ -32,23 +43,33 @@ class AboutMe extends StatelessWidget {
                   ],
                 ),
                 Row(
-                  children:  [
+                  children: [
                     const Expanded(
                       child: Text(
-                        aboutMe,
+                        about,
                         style: TextStyleMyApp.textStyle6,
                       ),
                     ),
-                    Container(
-                      height: 200,
-                      width: 200,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/code.png'),
+                    AnimatedBuilder(
+                      animation: _controller,
+                      builder: (_, child) {
+                        return Transform.rotate(
+                          angle: _controller.value * 2 * math.pi,
+                          child: child,
+                        );
+                      },
+                      child: Container(
+                        height:
+                            MediaQuery.of(context).size.width > 480 ? 200 : 80,
+                        width:
+                            MediaQuery.of(context).size.width > 480 ? 200 : 80,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/code.png'),
+                          ),
                         ),
+                        alignment: Alignment.bottomCenter,
                       ),
-                      alignment: Alignment.bottomCenter,
-                      //  child: Text('Ahmad',style:TextStyleMyApp.textStyle1,),
                     ),
                   ],
                 ),

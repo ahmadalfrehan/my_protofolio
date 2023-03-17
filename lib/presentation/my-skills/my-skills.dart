@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:protofolio/config/about.dart';
 import 'package:protofolio/config/debug/screen-stability.dart';
@@ -5,8 +7,18 @@ import 'package:protofolio/config/style.dart';
 
 import '../../config/textStyle.dart';
 
-class MySkills extends StatelessWidget {
+class MySkills extends StatefulWidget {
   const MySkills({Key? key}) : super(key: key);
+
+  @override
+  State<MySkills> createState() => _MySkillsState();
+}
+
+class _MySkillsState extends State<MySkills>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller =
+      AnimationController(vsync: this, duration: const Duration(seconds: 3))
+        ..repeat();
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +61,7 @@ class MySkills extends StatelessWidget {
                       physics: const NeverScrollableScrollPhysics(),
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount:
-                            MediaQuery.of(context).size.width > 480 ? 4 : 3,
+                        MediaQuery.of(context).size.width > 480 ? 4 : 3,
                         crossAxisSpacing: 30,
                         mainAxisExtent: 100,
                         mainAxisSpacing: 5,
@@ -59,14 +71,23 @@ class MySkills extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Image.asset(
-                              'assets/images/skills.png',
-                              width: MediaQuery.of(context).size.width > 480
-                                  ? null
-                                  : 40,
-                              height: MediaQuery.of(context).size.width > 480
-                                  ? null
-                                  : 40,
+                            AnimatedBuilder(
+                              animation: _controller,
+                              builder: (_, child) {
+                                return Transform.rotate(
+                                  angle: _controller.value * 2 * math.pi,
+                                  child: child,
+                                );
+                              },
+                              child: Image.asset(
+                                'assets/images/skills.png',
+                                width: MediaQuery.of(context).size.width > 480
+                                    ? 150
+                                    : 40,
+                                height: MediaQuery.of(context).size.width > 480
+                                    ? 150
+                                    : 40,
+                              ),
                             ),
                             SizedBox(height: ScreenStability.height(10)),
                             Expanded(
