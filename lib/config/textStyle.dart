@@ -29,7 +29,7 @@ class TextStyleMyApp {
     decoration: TextDecoration.lineThrough,
     decorationStyle: TextDecorationStyle.solid,
     decorationColor: colorHeadYellow,
-    decorationThickness: 5,
+    decorationThickness:4,
     fontSize: 18,
   );
   static const TextStyle textStyle5 = TextStyle(

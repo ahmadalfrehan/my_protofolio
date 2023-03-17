@@ -9,6 +9,8 @@ class MyExperience extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var image =
+        'assets/images/future.png';
     return Column(
       children: [
         Stack(
@@ -59,7 +61,7 @@ class MyExperience extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           _squareLogo(context),
-                          _squareLogo(context),
+                          _squareLogo(context, image: image),
                           _squareLogo(context),
                         ],
                       )
@@ -68,7 +70,7 @@ class MyExperience extends StatelessWidget {
                         children: [
                           _squareLogo(context),
                           SizedBox(height: ScreenStability.height(20)),
-                          _squareLogo(context),
+                          _squareLogo(context, image: image),
                           SizedBox(height: ScreenStability.height(20)),
                           _squareLogo(context),
                         ],
@@ -81,18 +83,16 @@ class MyExperience extends StatelessWidget {
     );
   }
 
-  _squareLogo(BuildContext context) {
+  _squareLogo(BuildContext context, {String? image}) {
     return Container(
-
       height: MediaQuery.of(context).size.width > 480
           ? ScreenStability.height(400)
           : ScreenStability.height(100),
       width: MediaQuery.of(context).size.width > 480
           ? ScreenStability.width(120)
           : ScreenStability.width(400),
-      decoration:  BoxDecoration(color: colorDarkBlue,
-        borderRadius: BorderRadius.circular(10)
-      ),
+      decoration: BoxDecoration(
+          color: colorDarkBlue, borderRadius: BorderRadius.circular(10)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -105,7 +105,7 @@ class MyExperience extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      _companyLogo(),
+                      _companyLogo(image: image),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
@@ -138,7 +138,7 @@ class MyExperience extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      _companyLogo(),
+                      _companyLogo(image: image),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: const [
@@ -174,15 +174,14 @@ class MyExperience extends StatelessWidget {
     );
   }
 
-  _companyLogo() {
+  _companyLogo({String? image}) {
     return Container(
-      padding: const EdgeInsets.all(5),
+      padding: EdgeInsets.all(image != null ? 1.2 : 3),
       decoration: BoxDecoration(
           color: colorWhite, borderRadius: BorderRadius.circular(5)),
-      child: const FlutterLogo(
-        style: FlutterLogoStyle.stacked,
-        size: 60,
-      ),
+      child: image == null
+          ? const FlutterLogo(style: FlutterLogoStyle.stacked, size: 60)
+          : Image.asset(image, height: 60, width: 60),
     );
   }
 }

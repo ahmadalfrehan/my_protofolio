@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:protofolio/config/debug/screen-stability.dart';
 import 'package:protofolio/config/style.dart';
 
 import '../../config/textStyle.dart';
@@ -9,9 +10,9 @@ class MySkills extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(0.0),
       child: Container(
-     //   height: MediaQuery.of(context).size.height / 3,
+
         width: double.infinity,
         clipBehavior: Clip.none,
         alignment: Alignment.center,
@@ -38,41 +39,45 @@ class MySkills extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 3.4,
-                child: GridView.builder(
-                    itemCount: 8,
-                    clipBehavior: Clip.none,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 4,
-                      crossAxisSpacing: 30,
-                      mainAxisSpacing: 30,
-                    ),
-                    itemBuilder: (context, index) {
-                      return Container(
-                        height: 220,
-                        width: 220,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.rectangle,
-                          color: Colors.white,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: const [
-                            Icon(Icons.snowing),
-                            Text(
-                              'skill title',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 10,
-                              ),
-                            )
-                          ],
-                        ),
-                      );
-                    }),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height / 3.4,
+                  child: GridView.builder(
+                      itemCount: 8,
+                      clipBehavior: Clip.none,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 4,
+                        crossAxisSpacing: 30,
+                        mainAxisSpacing: 30,
+                      ),
+                      itemBuilder: (context, index) {
+                        return Container(
+                          height: 220,
+                          width: 220,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: Colors.white,
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              // Icon(Icons.snowing),
+                              Image.asset('assets/images/skills.png'),
+                              Text(
+                                'skill title',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 10,
+                                ),
+                              )
+                            ],
+                          ),
+                        );
+                      }),
+                ),
               )
             ],
           ),
