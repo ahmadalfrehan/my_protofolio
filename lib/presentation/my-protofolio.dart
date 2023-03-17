@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:protofolio/presentation/my-certificate/my-certificate.dart';
 import 'package:protofolio/presentation/my-projects/my-projects.dart';
 
 import 'about-me.dart';
@@ -24,6 +25,7 @@ class MyProtofolio extends StatelessWidget {
             SizedBox(height: 20),
             MySkills(),
             MyProjects(),
+            MyCertificate(),
           ],
         ),
       ),

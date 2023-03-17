@@ -61,7 +61,7 @@ class _MySkillsState extends State<MySkills>
                       physics: const NeverScrollableScrollPhysics(),
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount:
-                        MediaQuery.of(context).size.width > 480 ? 4 : 3,
+                            MediaQuery.of(context).size.width > 480 ? 4 : 3,
                         crossAxisSpacing: 30,
                         mainAxisExtent: 100,
                         mainAxisSpacing: 5,
