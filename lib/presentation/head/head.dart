@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protofolio/config/style.dart';
-import '../../config/about.dart';
+
 import '../../config/textStyle.dart';
 
 class Head extends StatelessWidget {
@@ -18,7 +18,7 @@ class Head extends StatelessWidget {
               child: Column(
                 children: [
                   Row(
-                    children: const [
+                    children:  [
                       Text(
                         'Hi,',
                         style: TextStyleMyApp.textStyle1,
@@ -26,10 +26,10 @@ class Head extends StatelessWidget {
                     ],
                   ),
                   Row(
-                    children: const [
+                    children:  [
                       Expanded(
                         child: Text(
-                          'I am Ahmad',
+                          'I am Ahmad Al_Frehan',
                           style: TextStyleMyApp.textStyle2,
                         ),
                       ),
@@ -40,7 +40,7 @@ class Head extends StatelessWidget {
                     children: const [
                       Expanded(
                         child: Text(
-                          about,
+                          'Flutter developer at Future Code | Ai Student at faculty of informatics engineering | c++',
                           style: TextStyleMyApp.textStyle3,
                         ),
                       ),
@@ -50,9 +50,12 @@ class Head extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      _projectsMine(),
-                      _projectsMine(),
-                      _projectsMine(),
+                      _projectsMine(num: '+3', project: 'Apps on Google Play'),
+                      const SizedBox(width: 10),
+                      _projectsMine(
+                          num: '+60', project: 'Repositories n GitHub'),
+                      const SizedBox(width: 10),
+                      _projectsMine(num: '+10', project: 'Private projects'),
                     ],
                   ),
                   const SizedBox(height: 50)
@@ -61,8 +64,8 @@ class Head extends StatelessWidget {
             ),
             Expanded(
               child: Container(
-                height: 200,
-                width: 200,
+                height: MediaQuery.of(context).size.width <= 480 ? 150 : 400,
+                width: MediaQuery.of(context).size.width <= 480 ? 150 : 400,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('assets/images/ahmad.jpg'),
@@ -92,18 +95,21 @@ class Head extends StatelessWidget {
     );
   }
 
-  _projectsMine() {
-    return Column(
-      children: const [
-        Text(
-          '22',
-          style: TextStyleMyApp.textStyle4,
-        ),
-        Text(
-          'project',
-          style: TextStyleMyApp.textStyle3,
-        ),
-      ],
+  _projectsMine({String? num, String? project}) {
+    return Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            num ?? '',
+            style: TextStyleMyApp.textStyle4,
+          ),
+          Text(
+            project ?? '',
+            style: TextStyleMyApp.textStyle3,
+          ),
+        ],
+      ),
     );
   }
 }

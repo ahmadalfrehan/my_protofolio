@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:protofolio/config/style.dart';
 
 class TextStyleMyApp {
-  static const TextStyle textStyle1 = TextStyle(
+  static  TextStyle textStyle1 = TextStyle(
     color: Colors.white,
     fontWeight: FontWeight.w800,
-    fontSize: 30,
+    fontSize: Get.width>480? 30:18,
     //fontFamily: 'Karla',
   );
-  static const TextStyle textStyle2 = TextStyle(
+  static TextStyle textStyle2 = TextStyle(
     color: colorHeadYellow,
     fontWeight: FontWeight.w800,
-    fontSize: 30,
+    fontSize: Get.width>480? 30:18,
   );
   static const TextStyle textStyle3 = TextStyle(
     color: colorHeadGrey,
