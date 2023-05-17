@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:protofolio/presentation/my-projects/details-projects.dart';
+import 'package:protofolio/presentation/my-projects/getx/projects-controller.dart';
 
 import '../../config/style.dart';
+// import 'dart:js' as js;
 
 class MyProjects extends StatelessWidget {
   const MyProjects({Key? key}) : super(key: key);
@@ -8,6 +11,7 @@ class MyProjects extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.only(left: 10, top: 10, right: 10),
       //height: Get.height/4,
       child: Column(
         children: [
@@ -39,40 +43,107 @@ class MyProjects extends StatelessWidget {
               ),
             ],
           ),
+          const SizedBox(height: 10),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 3.4,
+            width: MediaQuery.of(context).size.height / 2,
+            // height: MediaQuery.of(context).size.height / 3.2,
             child: GridView.builder(
-                itemCount: 8,
-                clipBehavior: Clip.none,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 4,
-                  crossAxisSpacing: 30,
-                  mainAxisSpacing: 30,
+                itemCount: ProjectsController.projectsList.length,
+                padding:  EdgeInsets.zero,
+                // clipBehavior: Clip.none,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+
+                gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
+                  // crossAxisCount: 4,
+                  crossAxisCount:
+                  MediaQuery.of(context).size.width > 480 ? 4 : 3,
+
+                  crossAxisSpacing: 0,
+                  // mainAxisExtent: 150,
+                  mainAxisExtent:
+                  MediaQuery.of(context).size.width > 480 ? 150 : 100,
+
+                  mainAxisSpacing: 0,
                 ),
                 itemBuilder: (context, index) {
-                  return Container(
-                    height: 220,
-                    width: 220,
-                    decoration: BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: const [
-                        Icon(Icons.paste_rounded),
-                        Text(
-                          'project title',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 10,
-                          ),
-                        )
-                      ],
-                    ),
+                  return MaterialButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                            builder: (context) => DetailsProjects(
+                                projectsEntity:
+                                    ProjectsController.projectsList[index])),
+                      );
+                    },
+                    child: Container(
+                        height: 220,
+                        width: 220,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        alignment: Alignment.bottomCenter,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                              height: 70,
+                              width: 70,
+                              decoration: BoxDecoration(
+                                boxShadow: const [
+                                  BoxShadow(
+                                      color: Color.fromRGBO(0, 0, 0, 0.21),
+                                      spreadRadius: 0,
+                                      blurRadius: 16,
+                                      blurStyle: BlurStyle.outer)
+                                ],
+                                borderRadius: BorderRadius.circular(12),
+                                image: ProjectsController
+                                            .projectsList[index].image ==
+                                        ''
+                                    ? null
+                                    : DecorationImage(
+                                        fit: BoxFit.fill,
+                                        image: AssetImage(ProjectsController
+                                            .projectsList[index].image
+                                            .toString()),
+                                      ),
+                              ),
+                              child: ProjectsController
+                                          .projectsList[index].image ==
+                                      ''
+                                  ? const FlutterLogo(size: 70)
+                                  : null,
+                            ),
+                            const SizedBox(height: 10),
+                            Expanded(
+                              child: Text(
+                                ProjectsController.projectsList[index].name
+                                    .toString(),
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                    fontSize: 13,
+                                    color: colorHead,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                            ),
+                          ],
+                        )),
                   );
                 }),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              MaterialButton(
+                onPressed: () {
+                  // Navigator.of(context).push(MaterialPageRoute(
+                  //     builder: (context) => const AllProjects()));
+                  // js.context.callMethod('open', ['https://github.com/ahmadalfrehan?tab=repositories']);
+                },
+                child: const Text('Show more >'),
+              )
+            ],
           )
         ],
       ),

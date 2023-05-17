@@ -16,9 +16,37 @@ class MySkills extends StatefulWidget {
 
 class _MySkillsState extends State<MySkills>
     with SingleTickerProviderStateMixin {
-  late final AnimationController _controller =
-      AnimationController(vsync: this, duration: const Duration(seconds: 3))
-        ..repeat();
+  // late final AnimationController _controller =
+  // AnimationController(vsync: this, duration: const Duration(seconds: 3))
+  //   ..repeat();
+  AnimationController? _controller;
+  Animation<double>? animation;
+
+  @override
+  void initState() {
+    _controller = AnimationController(
+      duration: const Duration(seconds: 5),
+      vsync: this,
+    );
+    final curved = CurvedAnimation(
+      parent: _controller as Animation<double>,
+      curve: Curves.bounceInOut,
+      reverseCurve: Curves.easeInOut,
+    );
+    animation = Tween<double>(begin: 0, end: 2 * math.pi).animate(curved)
+      ..addListener(() {
+        setState(() {});
+      })
+      ..addStatusListener((status) {
+        if (status == AnimationStatus.completed) {
+          _controller!.reverse();
+        } else if (status == AnimationStatus.dismissed) {
+          _controller!.forward();
+        }
+      });
+    _controller!.forward();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,14 +100,9 @@ class _MySkillsState extends State<MySkills>
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            AnimatedBuilder(
-                              animation: _controller,
-                              builder: (_, child) {
-                                return Transform.rotate(
-                                  angle: _controller.value * 2 * math.pi,
-                                  child: child,
-                                );
-                              },
+                            Transform.rotate(
+                              angle: animation!.value,
+                              // angle: _controller?.value ?? 0 * 2 * math.pi,
                               child: Image.asset(
                                 'assets/images/skills.png',
                                 width: MediaQuery.of(context).size.width > 480

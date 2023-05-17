@@ -22,6 +22,9 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
         duration: const Duration(seconds: 10),
         reverseDuration: const Duration(seconds: 5))
       ..repeat();
+    Future.delayed(const Duration(seconds: 12), () {
+      _controller.stop();
+    });
     _animation = CurvedAnimation(
       parent: _controller,
       curve: Curves.bounceInOut,
@@ -65,7 +68,7 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                               child: ScaleTransition(
                                 scale: _animation,
                                 child: const Text(
-                                  'Flutter developer at Future Code | Ai Student at faculty of informatics engineering | c++',
+                                  'Flutter developer | Ai Student | c++',
                                   style: TextStyleMyApp.textStyle3,
                                 ),
                               ),
@@ -98,7 +101,7 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                           MediaQuery.of(context).size.width <= 480 ? 150 : 400,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage('assets/images/ahmad.jpg'),
+                          image: AssetImage('assets/images/logo.jpg'),
                         ),
                       ),
                       alignment: Alignment.bottomCenter,
@@ -149,9 +152,10 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                               ? 150
                               : 400,
                           decoration: BoxDecoration(
+                            border: Border.all(color: Colors.white),
                             borderRadius: BorderRadius.circular(10),
                             image: const DecorationImage(
-                                image: AssetImage('assets/images/ahmad.jpg'),
+                                image: AssetImage('assets/images/logo.jpg'),
                                 fit: BoxFit.fill),
                           ),
                         ),
@@ -166,7 +170,7 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                         child: ScaleTransition(
                           scale: _animation,
                           child: const Text(
-                            'Flutter developer at Future Code | Ai Student at faculty of informatics engineering | c++',
+                            'Flutter developer | Ai Student | c++',
                             style: TextStyleMyApp.textStyle3,
                           ),
                         ),
