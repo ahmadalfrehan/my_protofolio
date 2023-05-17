@@ -24,9 +24,11 @@ class MyProtofolio extends StatelessWidget {
             AboutMe(),
             MyExperience(),
             SizedBox(height: 20),
-            MySkills(),
-            MyProjects(),
             MyCertificate(),
+            MyProjects(),
+            MySkills(),
+
+            SizedBox(height: 20),
             ContactUs(),
           ],
         ),

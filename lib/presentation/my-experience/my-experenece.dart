@@ -60,19 +60,31 @@ class MyExperience extends StatelessWidget {
                     ? Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          _squareLogo(context),
-                          _squareLogo(context, image: image),
-                          _squareLogo(context),
+                          _squareLogo(context,
+                              image: image,
+                              company: 'Future-Code . Full Time',
+                              time: 'Aug 2022 - May 2023'),
+                          _squareLogo(context,
+                              company: 'Freelance',
+                              time: 'Nov 2021 - May 2023'),
+
+                          // _squareLogo(context),
                         ],
                       )
                     : Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          _squareLogo(context),
+                          _squareLogo(context,
+                              image: image,
+                              company: 'Future-Code . Full Time',
+                              time: 'Aug 2022 - May 2023'),
+
                           SizedBox(height: ScreenStability.height(20)),
-                          _squareLogo(context, image: image),
+                          _squareLogo(context,
+                              company: 'Freelance',
+                              time: 'Nov 2021 - May 2023'),
                           SizedBox(height: ScreenStability.height(20)),
-                          _squareLogo(context),
+                          // _squareLogo(context),
                         ],
                       ),
               ],
@@ -83,7 +95,8 @@ class MyExperience extends StatelessWidget {
     );
   }
 
-  _squareLogo(BuildContext context, {String? image}) {
+  _squareLogo(BuildContext context,
+      {String? image, String? company, String? time}) {
     return Container(
       height: MediaQuery.of(context).size.width > 480
           ? ScreenStability.height(400)
@@ -119,14 +132,14 @@ class MyExperience extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const Text('companyName . Full Time',
-                          style: TextStyle(
+                      Text('$company',
+                          style: const TextStyle(
                             color: colorWhite,
                             fontSize: 10,
                           )),
-                      const Text(
-                        'Aug 2022 - Present',
-                        style: TextStyle(
+                      Text(
+                        '$time',
+                        style: const TextStyle(
                           color: colorWhite,
                           fontSize: 10,
                         ),
@@ -141,8 +154,8 @@ class MyExperience extends StatelessWidget {
                       _companyLogo(image: image),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [
-                          Text(
+                        children: [
+                          const Text(
                             'Flutter Developer',
                             style: TextStyle(
                               color: Colors.white,
@@ -151,15 +164,15 @@ class MyExperience extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            'companyName . Full Time',
-                            style: TextStyle(
+                            '$company',
+                            style: const TextStyle(
                               color: colorWhite,
                               fontSize: 10,
                             ),
                           ),
                           Text(
-                            'Aug 2022 - Present',
-                            style: TextStyle(
+                            '$time',
+                            style: const TextStyle(
                               color: colorWhite,
                               fontSize: 10,
                             ),
