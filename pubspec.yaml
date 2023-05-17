@@ -40,6 +40,7 @@ dependencies:
   flutter_bloc: ^8.1.1
   get: ^4.6.5
   dartz: ^0.10.1
+  device_info_plus: ^9.0.0
 
 dev_dependencies:
   flutter_test:
