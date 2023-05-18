@@ -55,7 +55,7 @@ class ContactUs extends StatelessWidget {
               ),)),
           const SizedBox(height: 20),
           const Text(
-            'you can also chat with me or follow me on:',
+            'you can also chat with me any where you want :',
             style: TextStyle(
                 color: colorWhite, fontSize: 15, fontWeight: FontWeight.w400),
           ),
@@ -83,11 +83,11 @@ class ContactUs extends StatelessWidget {
               const SizedBox(width: 10),
               // Image.asset('assets/images/git.png')
 
-              InkWell(
-                  onTap: (){
-                    ///     js.context.callMethod('open', ['https://github.com/ahmadalfrehan']);
-                  },
-                  child: Image.asset('assets/images/git.png',width: 20,height: 20,color: Colors.white,)),
+              // InkWell(
+              //     onTap: (){
+              //       ///     js.context.callMethod('open', ['https://github.com/ahmadalfrehan']);
+              //     },
+              //     child: Image.asset('assets/images/git.png',width: 20,height: 20,color: Colors.white,)),
               const SizedBox(width: 10),
             ],
           ),

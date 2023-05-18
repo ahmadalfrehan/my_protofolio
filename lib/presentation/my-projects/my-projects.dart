@@ -63,7 +63,7 @@ class MyProjects extends StatelessWidget {
                   crossAxisSpacing: 0,
                   // mainAxisExtent: 150,
                   mainAxisExtent:
-                  MediaQuery.of(context).size.width > 480 ? 150 : 100,
+                  MediaQuery.of(context).size.width > 480 ? 150 : 150,
 
                   mainAxisSpacing: 0,
                 ),

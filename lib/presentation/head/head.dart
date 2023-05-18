@@ -209,7 +209,7 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                       const SizedBox(width: 20),
                       InkWell(
                           onTap: () {
-                            ///         js.context.callMethod('open', ['https://linkedin.com/in/ahmadalfrehan']);
+                            ///         js.context.callMethod('open', ['https://play.google.com/store/apps/dev?id=8247791016528345285&hl=it&gl=US']);
                           },
                           child: Image.asset(
                             'assets/images/google-play.png',
@@ -256,7 +256,7 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                       const SizedBox(width: 20),
                       InkWell(
                           onTap: () {
-                            ///         js.context.callMethod('open', ['https://linkedin.com/in/ahmadalfrehan']);
+                            ///         js.context.callMethod('open', ['https://gitlab.com/ahmadalfrehan']);
                           },
                           child: Image.asset(
                             'assets/images/gitlab.png',
