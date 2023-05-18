@@ -22,7 +22,7 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
         duration: const Duration(seconds: 10),
         reverseDuration: const Duration(seconds: 5))
       ..repeat();
-    Future.delayed(const Duration(seconds: 12), () {
+    Future.delayed(const Duration(seconds: 10), () {
       _controller.stop();
     });
     _animation = CurvedAnimation(
@@ -68,7 +68,7 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                               child: ScaleTransition(
                                 scale: _animation,
                                 child: const Text(
-                                  'Flutter developer | Ai Student | c++',
+                                  'Flutter developer | Ai Student | C++',
                                   style: TextStyleMyApp.textStyle3,
                                 ),
                               ),
@@ -80,10 +80,10 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             _projectsMine(
-                                num: '+3', project: 'Apps on Google Play'),
+                                num: '+4', project: 'Apps on Google Play'),
                             const SizedBox(width: 10),
                             _projectsMine(
-                                num: '+60', project: 'Repositories n GitHub'),
+                                num: '+65', project: 'Repositories n GitHub'),
                             const SizedBox(width: 10),
                             _projectsMine(
                                 num: '+10', project: 'Private projects'),
@@ -170,7 +170,7 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                         child: ScaleTransition(
                           scale: _animation,
                           child: const Text(
-                            'Flutter developer | Ai Student | c++',
+                            'Flutter developer | Ai Student | C++',
                             style: TextStyleMyApp.textStyle3,
                           ),
                         ),
@@ -178,18 +178,95 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                     ],
                   ),
                   const SizedBox(height: 20),
+                  // Divider(color: Colors.white),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      _projectsMine(num: '+3', project: 'Apps on Google Play'),
-                      const SizedBox(width: 10),
-                      _projectsMine(
-                          num: '+60', project: 'Repositories on GitHub'),
-                      const SizedBox(width: 10),
-                      _projectsMine(num: '+10', project: 'Private projects'),
+                      _projectsMine(num: '+500', project: 'Linkedin Followers'),
+                      const SizedBox(width: 2),
+                      _projectsMine(num: '+4', project: 'Google Play Apps'),
+                      const SizedBox(width: 5),
+                      _projectsMine(num: '+65', project: 'Github Repositories'),
+                      const SizedBox(width: 5),
+                      _projectsMine(num: '+10', project: 'Gitlab Projects'),
                     ],
                   ),
-                  const SizedBox(height: 50)
+                  const SizedBox(height: 30),
+                  Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      InkWell(
+                          onTap: () {
+                            ///         js.context.callMethod('open', ['https://linkedin.com/in/ahmadalfrehan']);
+                          },
+                          child: Image.asset(
+                            'assets/images/link.png',
+                            width: 23,
+                            height: 23,
+                            // color: Colors.white,
+                          )),
+                      const SizedBox(width: 20),
+                      InkWell(
+                          onTap: () {
+                            ///         js.context.callMethod('open', ['https://linkedin.com/in/ahmadalfrehan']);
+                          },
+                          child: Image.asset(
+                            'assets/images/google-play.png',
+                            width: 23,
+                            height: 23,
+                            // color: Colors.white,
+                          )),
+                      const SizedBox(width: 20),
+                      InkWell(
+                          onTap: () {
+                            ///    js.context.callMethod('open', ['https://facebook.com/ahmadalfrehan']);
+                          },
+                          child: Image.asset(
+                            'assets/images/facebook.png',
+                            width: 23,
+                            height: 23,
+                            // color: Colors.white,
+                          )),
+                      const SizedBox(width: 20),
+                      InkWell(
+                          onTap: () {
+                            ///      js.context.callMethod('open', ['https://t.me/ahmadalfrehan']);
+                          },
+                          child: Image.asset(
+                            'assets/images/telegram.png',
+                            width: 23,
+                            height: 23,
+                            // color: Colors.white,
+                          )),
+                      const SizedBox(width: 20),
+                      // const SizedBox(width: 10),
+                      // Image.asset('assets/images/git.png')
+
+                      InkWell(
+                          onTap: () {
+                            ///     js.context.callMethod('open', ['https://github.com/ahmadalfrehan']);
+                          },
+                          child: Image.asset(
+                            'assets/images/git.png',
+                            width: 23,
+                            height: 23,
+                            color: Colors.white,
+                          )),
+                      const SizedBox(width: 20),
+                      InkWell(
+                          onTap: () {
+                            ///         js.context.callMethod('open', ['https://linkedin.com/in/ahmadalfrehan']);
+                          },
+                          child: Image.asset(
+                            'assets/images/gitlab.png',
+                            width: 23,
+                            height: 23,
+                            // color: Colors.white,
+                          )),
+                    ],
+                  ),
+                  const SizedBox(height: 30)
                 ],
               ),
             ),
@@ -220,6 +297,7 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
           ),
           Text(
             project ?? '',
+            // maxLines: 2,
             style: TextStyleMyApp.textStyle3,
           ),
         ],

@@ -4,7 +4,7 @@ import 'package:protofolio/presentation/my-projects/details-projects.dart';
 import 'package:protofolio/presentation/my-projects/getx/projects-controller.dart';
 
 import '../../config/style.dart';
-import 'dart:js' as js;
+///import 'dart:js' as js;
 
 class MyProjects extends StatelessWidget {
   const MyProjects({Key? key}) : super(key: key);
@@ -140,7 +140,7 @@ class MyProjects extends StatelessWidget {
                 onPressed: () {
                   // Navigator.of(context).push(MaterialPageRoute(
                   //     builder: (context) => const AllProjects()));
-                  js.context.callMethod('open', ['https://github.com/ahmadalfrehan?tab=repositories']);
+                  /// js.context.callMethod('open', ['https://github.com/ahmadalfrehan?tab=repositories']);
                 },
                 child: const Text('Show more >'),
               ),

@@ -85,7 +85,7 @@ class ProjectsController extends GetxController {
       desc: 'Redsys with Flutter it is a plugin package that call native code to perform some payment requests for redsys online bank',
       image: '',
       url:
-          'https://play.google.com/store/apps/details?id=com.ahmad_alfrehan.imagin_true',
+          'https://github.com/ahmedalfrehan/redsys_with_flutter',
       date: 'date',
     ),
   ];
