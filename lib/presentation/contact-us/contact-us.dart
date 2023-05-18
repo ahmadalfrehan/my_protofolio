@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:protofolio/config/style.dart';
-///import 'dart:js' as js;
+import 'dart:js' as js;
 
 import '../../config/textStyle.dart';
 
@@ -47,7 +47,7 @@ class ContactUs extends StatelessWidget {
                   backgroundColor: colorHeadYellow,
                   fixedSize: Size(Get.width / 1.5, 40)),
               onPressed: () {
-                ///      // js.context.callMethod('open', ['${projectsEntity.url}']);
+                      // js.context.callMethod('open', ['${projectsEntity.url}']);
               },
               child: const Text('Send',style: TextStyle(
                 color: colorHead,
@@ -65,19 +65,19 @@ class ContactUs extends StatelessWidget {
             children:  [
               InkWell(
                   onTap: (){
-                    ///         js.context.callMethod('open', ['https://linkedin.com/in/ahmadalfrehan']);
+                             js.context.callMethod('open', ['https://linkedin.com/in/ahmadalfrehan']);
                   },
                   child: Image.asset('assets/images/link.png',width: 18,height: 18,color: Colors.white,)),
               const SizedBox(width: 10),
               InkWell(
                   onTap: (){
-                    ///    js.context.callMethod('open', ['https://facebook.com/ahmadalfrehan']);
+                        js.context.callMethod('open', ['https://facebook.com/ahmadalfrehan']);
                   },
                   child: const Icon(Icons.facebook, color: colorWhite)),
               const SizedBox(width: 10),
               InkWell(
                   onTap: (){
-                    ///      js.context.callMethod('open', ['https://t.me/ahmadalfrehan']);
+                          js.context.callMethod('open', ['https://t.me/ahmadalfrehan']);
                   },
                   child: const Icon(Icons.telegram, color: colorWhite)),
               const SizedBox(width: 10),
@@ -85,7 +85,7 @@ class ContactUs extends StatelessWidget {
 
               // InkWell(
               //     onTap: (){
-              //       ///     js.context.callMethod('open', ['https://github.com/ahmadalfrehan']);
+              //            js.context.callMethod('open', ['https://github.com/ahmadalfrehan']);
               //     },
               //     child: Image.asset('assets/images/git.png',width: 20,height: 20,color: Colors.white,)),
               const SizedBox(width: 10),

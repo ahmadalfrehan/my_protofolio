@@ -1,6 +1,7 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:protofolio/config/style.dart';
-
+import 'dart:js' as js;
 import '../../config/textStyle.dart';
 
 class Head extends StatefulWidget {
@@ -198,7 +199,7 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                     children: [
                       InkWell(
                           onTap: () {
-                            ///         js.context.callMethod('open', ['https://linkedin.com/in/ahmadalfrehan']);
+                                     js.context.callMethod('open', ['https://linkedin.com/in/ahmadalfrehan']);
                           },
                           child: Image.asset(
                             'assets/images/link.png',
@@ -209,7 +210,7 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                       const SizedBox(width: 20),
                       InkWell(
                           onTap: () {
-                            ///         js.context.callMethod('open', ['https://play.google.com/store/apps/dev?id=8247791016528345285&hl=it&gl=US']);
+                                     js.context.callMethod('open', ['https://play.google.com/store/apps/dev?id=8247791016528345285&hl=it&gl=US']);
                           },
                           child: Image.asset(
                             'assets/images/google-play.png',
@@ -220,7 +221,7 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                       const SizedBox(width: 20),
                       InkWell(
                           onTap: () {
-                            ///    js.context.callMethod('open', ['https://facebook.com/ahmadalfrehan']);
+                                js.context.callMethod('open', ['https://facebook.com/ahmadalfrehan']);
                           },
                           child: Image.asset(
                             'assets/images/facebook.png',
@@ -231,7 +232,7 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                       const SizedBox(width: 20),
                       InkWell(
                           onTap: () {
-                            ///      js.context.callMethod('open', ['https://t.me/ahmadalfrehan']);
+                                  js.context.callMethod('open', ['https://t.me/ahmadalfrehan']);
                           },
                           child: Image.asset(
                             'assets/images/telegram.png',
@@ -245,7 +246,7 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
 
                       InkWell(
                           onTap: () {
-                            ///     js.context.callMethod('open', ['https://github.com/ahmadalfrehan']);
+                                 js.context.callMethod('open', ['https://github.com/ahmadalfrehan']);
                           },
                           child: Image.asset(
                             'assets/images/git.png',
@@ -256,7 +257,7 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                       const SizedBox(width: 20),
                       InkWell(
                           onTap: () {
-                            ///         js.context.callMethod('open', ['https://gitlab.com/ahmadalfrehan']);
+                                     js.context.callMethod('open', ['https://gitlab.com/ahmadalfrehan']);
                           },
                           child: Image.asset(
                             'assets/images/gitlab.png',
@@ -295,10 +296,12 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
             num ?? '',
             style: TextStyleMyApp.textStyle4,
           ),
-          Text(
-            project ?? '',
-            // maxLines: 2,
-            style: TextStyleMyApp.textStyle3,
+          AnimatedTextKit(
+            animatedTexts: [
+              WavyAnimatedText(project ?? '',
+                  textStyle: TextStyleMyApp.textStyle3)
+            ],
+            isRepeatingAnimation: false,
           ),
         ],
       ),
