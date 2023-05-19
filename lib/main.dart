@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:device_info_plus/device_info_plus.dart';
+/// import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:protofolio/config/themes.dart';
@@ -9,17 +9,19 @@ import 'package:protofolio/presentation/my-protofolio.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Services.getHttp();
-  log(Services.requestModelList.length.toString());
-  DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
-  WebBrowserInfo webBrowserInfo = await deviceInfo.webBrowserInfo;
-  // final deviceInfoPlugin = DeviceInfoPlugin();
-  Services.requestModelList.add(RequestModel(
-    key: webBrowserInfo.userAgent.toString(),
-    number: webBrowserInfo.platform.toString(),
-  ));
 
-  await Services.httpPostAndPut();
+  /// await Services.getHttp();
+  log(Services.requestModelList.length.toString());
+
+  /// DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+  /// WebBrowserInfo webBrowserInfo = await deviceInfo.webBrowserInfo;
+  // final deviceInfoPlugin = DeviceInfoPlugin();
+  ///Services.requestModelList.add(RequestModel(
+  ///   key: webBrowserInfo.userAgent.toString(),
+  ///  number: webBrowserInfo.platform.toString(),
+  ///));
+
+  ///await Services.httpPostAndPut();
 
   // await httpPostAndGet();
   // MaterialApp(

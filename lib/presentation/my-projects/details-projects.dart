@@ -1,5 +1,5 @@
 import 'dart:js' as js;
-
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:protofolio/config/style.dart';
@@ -82,7 +82,9 @@ class DetailsProjects extends StatelessWidget {
                     backgroundColor: colorHead,
                     fixedSize: Size(Get.width / 1.1, 50)),
                 onPressed: () {
-                   js.context.callMethod('open', ['${projectsEntity.url}']);
+
+                  if(kIsWeb)
+                    js.context.callMethod('open', ['${projectsEntity.url}']);
                 },
                 child: const Text('View')),
             const SizedBox(height: 15),

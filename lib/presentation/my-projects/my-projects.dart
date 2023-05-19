@@ -5,7 +5,7 @@ import 'package:protofolio/presentation/my-projects/getx/projects-controller.dar
 
 import '../../config/style.dart';
 import 'dart:js' as js;
-
+import 'package:flutter/foundation.dart' show kIsWeb;
 class MyProjects extends StatelessWidget {
   const MyProjects({Key? key}) : super(key: key);
 
@@ -140,7 +140,8 @@ class MyProjects extends StatelessWidget {
                 onPressed: () {
                   // Navigator.of(context).push(MaterialPageRoute(
                   //     builder: (context) => const AllProjects()));
-                   js.context.callMethod('open', ['https://github.com/ahmadalfrehan?tab=repositories']);
+                  if(kIsWeb)
+                    js.context.callMethod('open', ['https://github.com/ahmadalfrehan?tab=repositories']);
                 },
                 child: const Text('Show more >'),
               ),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:protofolio/config/style.dart';
 import 'dart:js' as js;
 import '../../config/textStyle.dart';
-
+import 'package:flutter/foundation.dart' show kIsWeb;
 class Head extends StatefulWidget {
   const Head({Key? key}) : super(key: key);
 
@@ -199,7 +199,8 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                     children: [
                       InkWell(
                           onTap: () {
-                                     js.context.callMethod('open', ['https://linkedin.com/in/ahmadalfrehan']);
+                            if(kIsWeb)
+                              js.context.callMethod('open', ['https://linkedin.com/in/ahmadalfrehan']);
                           },
                           child: Image.asset(
                             'assets/images/link.png',
@@ -210,7 +211,8 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                       const SizedBox(width: 20),
                       InkWell(
                           onTap: () {
-                                     js.context.callMethod('open', ['https://play.google.com/store/apps/dev?id=8247791016528345285&hl=it&gl=US']);
+                            if(kIsWeb)
+                              js.context.callMethod('open', ['https://play.google.com/store/apps/dev?id=8247791016528345285&hl=it&gl=US']);
                           },
                           child: Image.asset(
                             'assets/images/google-play.png',
@@ -221,7 +223,8 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                       const SizedBox(width: 20),
                       InkWell(
                           onTap: () {
-                                js.context.callMethod('open', ['https://facebook.com/ahmadalfrehan']);
+                            if(kIsWeb)
+                              js.context.callMethod('open', ['https://facebook.com/ahmadalfrehan']);
                           },
                           child: Image.asset(
                             'assets/images/facebook.png',
@@ -232,7 +235,8 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                       const SizedBox(width: 20),
                       InkWell(
                           onTap: () {
-                                  js.context.callMethod('open', ['https://t.me/ahmadalfrehan']);
+                            if(kIsWeb)
+                              js.context.callMethod('open', ['https://t.me/ahmadalfrehan']);
                           },
                           child: Image.asset(
                             'assets/images/telegram.png',
@@ -246,7 +250,8 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
 
                       InkWell(
                           onTap: () {
-                                 js.context.callMethod('open', ['https://github.com/ahmadalfrehan']);
+                            if(kIsWeb)
+                              js.context.callMethod('open', ['https://github.com/ahmadalfrehan']);
                           },
                           child: Image.asset(
                             'assets/images/git.png',
@@ -257,7 +262,8 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                       const SizedBox(width: 20),
                       InkWell(
                           onTap: () {
-                                     js.context.callMethod('open', ['https://gitlab.com/ahmadalfrehan']);
+                            if(kIsWeb)
+                              js.context.callMethod('open', ['https://gitlab.com/ahmadalfrehan']);
                           },
                           child: Image.asset(
                             'assets/images/gitlab.png',

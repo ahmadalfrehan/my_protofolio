@@ -1,7 +1,10 @@
+import 'dart:io';
+import 'dart:js' as js;
+
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:protofolio/config/style.dart';
-import 'dart:js' as js;
 
 import '../../config/textStyle.dart';
 
@@ -47,12 +50,9 @@ class ContactUs extends StatelessWidget {
                   backgroundColor: colorHeadYellow,
                   fixedSize: Size(Get.width / 1.5, 40)),
               onPressed: () {
-                      // js.context.callMethod('open', ['${projectsEntity.url}']);
+                // js.context.callMethod('open', ['${projectsEntity.url}']);
               },
-              child: const Text('Send',style: TextStyle(
-                color: colorHead,
-                fontWeight: FontWeight.bold
-              ),)),
+              child: const Text('Send',style: TextStyle(color: colorHead, fontWeight: FontWeight.bold),)),
           const SizedBox(height: 20),
           const Text(
             'you can also chat with me any where you want :',
@@ -64,20 +64,34 @@ class ContactUs extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children:  [
               InkWell(
-                  onTap: (){
-                             js.context.callMethod('open', ['https://linkedin.com/in/ahmadalfrehan']);
+                  onTap: () {
+                    if (kIsWeb) {
+                      js.context.callMethod(
+                          'open', ['https://linkedin.com/in/ahmadalfrehan']);
+                    }
                   },
-                  child: Image.asset('assets/images/link.png',width: 18,height: 18,color: Colors.white,)),
+                  child: Image.asset(
+                    'assets/images/link.png',
+                    width: 18,
+                    height: 18,
+                    color: Colors.white,
+                  )),
               const SizedBox(width: 10),
               InkWell(
-                  onTap: (){
-                        js.context.callMethod('open', ['https://facebook.com/ahmadalfrehan']);
+                  onTap: () {
+                    if (!Platform.isAndroid) {
+                      js.context.callMethod(
+                          'open', ['https://facebook.com/ahmadalfrehan']);
+                    }
                   },
                   child: const Icon(Icons.facebook, color: colorWhite)),
               const SizedBox(width: 10),
               InkWell(
-                  onTap: (){
-                          js.context.callMethod('open', ['https://t.me/ahmadalfrehan']);
+                  onTap: () {
+                    if (kIsWeb) {
+                      js.context
+                          .callMethod('open', ['https://t.me/ahmadalfrehan']);
+                    }
                   },
                   child: const Icon(Icons.telegram, color: colorWhite)),
               const SizedBox(width: 10),
@@ -113,20 +127,20 @@ class ContactUs extends StatelessWidget {
       minLines: label=='description'?1:1,
       maxLines: label=='description'?5:1,
       decoration: InputDecoration(
-        border: const UnderlineInputBorder(borderSide: BorderSide(color: colorWhite)),
-        disabledBorder:
-            const UnderlineInputBorder(borderSide: BorderSide(color: colorWhite)),
-        focusedBorder:
-            const UnderlineInputBorder(borderSide: BorderSide(color: colorWhite)),
-        enabledBorder:
-            const UnderlineInputBorder(borderSide: BorderSide(color: colorWhite)),
+        border: const UnderlineInputBorder(
+            borderSide: BorderSide(color: colorWhite)),
+        disabledBorder: const UnderlineInputBorder(
+            borderSide: BorderSide(color: colorWhite)),
+        focusedBorder: const UnderlineInputBorder(
+            borderSide: BorderSide(color: colorWhite)),
+        enabledBorder: const UnderlineInputBorder(
+            borderSide: BorderSide(color: colorWhite)),
         label: Text(
           label,
           style: const TextStyle(
               color: colorWhite, fontSize: 12, fontWeight: FontWeight.bold),
         ),
         hintText: hint,
-
         hintStyle: const TextStyle(
             color: colorWhite, fontSize: 12, fontWeight: FontWeight.w400),
       ),
