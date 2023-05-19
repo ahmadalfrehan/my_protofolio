@@ -112,7 +112,7 @@ class ContactUs extends StatelessWidget {
                   }
                 },
                 child: Image.asset(
-                  'assets/images/telegram.png',
+                  'assets/images/wa.png',
                   width: 23,
                   height: 23,
                 ),

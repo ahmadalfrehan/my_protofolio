@@ -96,8 +96,9 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                           children: [
                             InkWell(
                                 onTap: () {
-                                  if(kIsWeb)
+                                  if(kIsWeb) {
                                     js.context.callMethod('open', ['https://linkedin.com/in/ahmadalfrehan']);
+                                  }
                                 },
                                 child: Image.asset(
                                   'assets/images/link.png',
@@ -108,8 +109,9 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                             const SizedBox(width: 20),
                             InkWell(
                                 onTap: () {
-                                  if(kIsWeb)
+                                  if(kIsWeb) {
                                     js.context.callMethod('open', ['https://play.google.com/store/apps/dev?id=8247791016528345285&hl=it&gl=US']);
+                                  }
                                 },
                                 child: Image.asset(
                                   'assets/images/google-play.png',
@@ -120,8 +122,9 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                             const SizedBox(width: 20),
                             InkWell(
                                 onTap: () {
-                                  if(kIsWeb)
+                                  if(kIsWeb) {
                                     js.context.callMethod('open', ['https://facebook.com/ahmadalfrehan']);
+                                  }
                                 },
                                 child: Image.asset(
                                   'assets/images/facebook.png',
@@ -132,8 +135,9 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                             const SizedBox(width: 20),
                             InkWell(
                                 onTap: () {
-                                  if(kIsWeb)
+                                  if(kIsWeb) {
                                     js.context.callMethod('open', ['https://t.me/ahmadalfrehan']);
+                                  }
                                 },
                                 child: Image.asset(
                                   'assets/images/telegram.png',
@@ -142,13 +146,28 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                                   // color: Colors.white,
                                 )),
                             const SizedBox(width: 20),
+                            InkWell(
+                              onTap: () {
+                                if (kIsWeb) {
+                                  js.context
+                                      .callMethod('open', ['https://wa.me/963982867881']);
+                                }
+                              },
+                              child: Image.asset(
+                                'assets/images/wa.png',
+                                width: 23,
+                                height: 23,
+                              ),
+                            ),
+                            const SizedBox(width: 20),
                             // const SizedBox(width: 10),
                             // Image.asset('assets/images/git.png')
 
                             InkWell(
                                 onTap: () {
-                                  if(kIsWeb)
+                                  if(kIsWeb) {
                                     js.context.callMethod('open', ['https://github.com/ahmadalfrehan']);
+                                  }
                                 },
                                 child: Image.asset(
                                   'assets/images/git.png',
@@ -159,8 +178,9 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                             const SizedBox(width: 20),
                             InkWell(
                                 onTap: () {
-                                  if(kIsWeb)
+                                  if(kIsWeb) {
                                     js.context.callMethod('open', ['https://gitlab.com/ahmadalfrehan']);
+                                  }
                                 },
                                 child: Image.asset(
                                   'assets/images/gitlab.png',
@@ -279,8 +299,9 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                     children: [
                       InkWell(
                           onTap: () {
-                            if(kIsWeb)
+                            if(kIsWeb) {
                               js.context.callMethod('open', ['https://linkedin.com/in/ahmadalfrehan']);
+                            }
                           },
                           child: Image.asset(
                             'assets/images/link.png',
@@ -291,8 +312,9 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                       const SizedBox(width: 20),
                       InkWell(
                           onTap: () {
-                            if(kIsWeb)
+                            if(kIsWeb) {
                               js.context.callMethod('open', ['https://play.google.com/store/apps/dev?id=8247791016528345285&hl=it&gl=US']);
+                            }
                           },
                           child: Image.asset(
                             'assets/images/google-play.png',
@@ -303,8 +325,9 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                       const SizedBox(width: 20),
                       InkWell(
                           onTap: () {
-                            if(kIsWeb)
+                            if(kIsWeb) {
                               js.context.callMethod('open', ['https://facebook.com/ahmadalfrehan']);
+                            }
                           },
                           child: Image.asset(
                             'assets/images/facebook.png',
@@ -315,8 +338,9 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                       const SizedBox(width: 20),
                       InkWell(
                           onTap: () {
-                            if(kIsWeb)
+                            if(kIsWeb) {
                               js.context.callMethod('open', ['https://t.me/ahmadalfrehan']);
+                            }
                           },
                           child: Image.asset(
                             'assets/images/telegram.png',
@@ -324,14 +348,28 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                             height: 23,
                             // color: Colors.white,
                           )),
+
                       const SizedBox(width: 20),
-                      // const SizedBox(width: 10),
-                      // Image.asset('assets/images/git.png')
+                      InkWell(
+                        onTap: () {
+                          if (kIsWeb) {
+                            js.context
+                                .callMethod('open', ['https://wa.me/963982867881']);
+                          }
+                        },
+                        child: Image.asset(
+                          'assets/images/wa.png',
+                          width: 23,
+                          height: 23,
+                        ),
+                      ),
+                      const SizedBox(width: 20),
 
                       InkWell(
                           onTap: () {
-                            if(kIsWeb)
+                            if(kIsWeb) {
                               js.context.callMethod('open', ['https://github.com/ahmadalfrehan']);
+                            }
                           },
                           child: Image.asset(
                             'assets/images/git.png',
@@ -342,8 +380,9 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                       const SizedBox(width: 20),
                       InkWell(
                           onTap: () {
-                            if(kIsWeb)
+                            if(kIsWeb) {
                               js.context.callMethod('open', ['https://gitlab.com/ahmadalfrehan']);
+                            }
                           },
                           child: Image.asset(
                             'assets/images/gitlab.png',

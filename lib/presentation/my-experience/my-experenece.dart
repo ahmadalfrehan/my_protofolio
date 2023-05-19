@@ -43,13 +43,22 @@ class MyExperience extends StatelessWidget {
                       ],
                     ),
                     const Spacer(),
-                    const Expanded(
-                      child: Text(
-                        'it was wonderfully to share my experiences with you',
-                        style: TextStyleMyApp.textStyle9,
-                        maxLines: 3,
-                      ),
-                    ),
+                    MediaQuery.of(context).size.width > 480
+                        ? const Text(
+                            'Experiential Chronicles: Unveiling the Transformative Chapters of my Journey',
+                            style: TextStyleMyApp.textStyle9,
+                          )
+                        : const Expanded(
+                            child: Text(
+                              'Experiential Chronicles: Unveiling the Transformative Chapters of my Journey',
+                              style: TextStyle(
+                                color: colorDarkBlue,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 12,
+                              ),
+                              // maxLines: 3,
+                            ),
+                          ),
                   ],
                 ),
               ),
@@ -93,7 +102,9 @@ class MyExperience extends StatelessWidget {
           ],
         ),
         if (MediaQuery.of(context).size.width > 480)
-          const SizedBox(height: 100),
+          const SizedBox(height: 100)
+        else
+          const SizedBox(height: 50),
         Container(
           width: Get.width / 2,
           height: 8,
@@ -101,7 +112,6 @@ class MyExperience extends StatelessWidget {
               color: colorHead, borderRadius: BorderRadius.circular(8)),
         ),
         const SizedBox(height: 50),
-
       ],
     );
   }

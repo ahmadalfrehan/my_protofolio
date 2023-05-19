@@ -42,13 +42,18 @@ class Education extends StatelessWidget {
                       ],
                     ),
                     const Spacer(),
-                    const Expanded(
-                      child: Text(
-                        'lets share the education',
-                        style: TextStyleMyApp.textStyle9,
-                        maxLines: 3,
-                      ),
-                    ),
+                    MediaQuery.of(context).size.width > 480
+                        ? const Text(
+                            'Sharing My Education Journey with You',
+                            style: TextStyleMyApp.textStyle9,
+                            maxLines: 3,
+                          )
+                        : const Expanded(
+                            child: Text(
+                            'Sharing My Education Journey with You',
+                            style: TextStyleMyApp.textStyle9,
+                            maxLines: 3,
+                          )),
                   ],
                 ),
               ),
@@ -62,7 +67,7 @@ class Education extends StatelessWidget {
                         children: [
                           _squareLogo(context,
                               image: image,
-                              company: 'Artificial Intelligence',
+                              company: 'Student, Artificial Intelligence',
                               time: 'Oct 2022 - Present'),
                           _squareLogo(context,
                               image: image,
@@ -82,7 +87,7 @@ class Education extends StatelessWidget {
                         children: [
                           _squareLogo(context,
                               image: image,
-                              company: 'Artificial Intelligence',
+                              company: 'Student, Artificial Intelligence',
                               time: 'Oct 2022 - Present'),
                           SizedBox(height: ScreenStability.height(20)),
                           _squareLogo(context,
@@ -135,7 +140,7 @@ class Education extends StatelessWidget {
                         children: [
                           Text(
                             univ ?? 'Damascus University',
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 11,
                               fontWeight: FontWeight.w800,

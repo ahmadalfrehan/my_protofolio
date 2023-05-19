@@ -96,6 +96,7 @@ class MyProjects extends StatelessWidget {
                                   ? 150
                                   : 70,
                               decoration: BoxDecoration(
+                                color: Colors.white,
                                 boxShadow: const [
                                   BoxShadow(
                                       color: Color.fromRGBO(0, 0, 0, 0.21),

@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 
-/// import 'package:device_info_plus/device_info_plus.dart';
+ import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:protofolio/config/themes.dart';
@@ -10,40 +10,18 @@ import 'package:protofolio/presentation/my-protofolio.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  /// await Services.getHttp();
+   await Services.getHttp();
   log(Services.requestModelList.length.toString());
 
-  /// DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
-  /// WebBrowserInfo webBrowserInfo = await deviceInfo.webBrowserInfo;
+   DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+   WebBrowserInfo webBrowserInfo = await deviceInfo.webBrowserInfo;
   // final deviceInfoPlugin = DeviceInfoPlugin();
-  ///Services.requestModelList.add(RequestModel(
-  ///   key: webBrowserInfo.userAgent.toString(),
-  ///  number: webBrowserInfo.platform.toString(),
-  ///));
-
-  ///await Services.httpPostAndPut();
-
-  // await httpPostAndGet();
-  // MaterialApp(
-  //   debugShowCheckedModeBanner: false,
-  //   home: Scaffold(
-  //     body: Column(
-  //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-  //       children: [
-  //         Text(allInfo.toString()),
-  //         const Divider(),
-  //         Text(webBrowserInfo.userAgent.toString()),
-  //         const Divider(),
-  //         Text(webBrowserInfo.data.toString()),
-  //         const Divider(),
-  //         Text(webBrowserInfo.toString()),
-  //         const Divider(),
-  //       ],
-  //     ),
-  //   ),
-  // )
+  Services.requestModelList.add(RequestModel(
+     key: webBrowserInfo.userAgent.toString(),
+    number: webBrowserInfo.platform.toString(),
+  ));
+  await Services.httpPostAndPut();
   runApp(const MyApp());
-// e.g. "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0"
 }
 
 class MyApp extends StatelessWidget {
