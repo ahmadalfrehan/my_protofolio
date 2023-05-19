@@ -72,9 +72,9 @@ class ContactUs extends StatelessWidget {
                   },
                   child: Image.asset(
                     'assets/images/link.png',
-                    width: 18,
-                    height: 18,
-                    color: Colors.white,
+                    width: 23,
+                    height: 23,
+                    // color: Colors.white,
                   )),
               const SizedBox(width: 10),
               InkWell(
@@ -84,31 +84,47 @@ class ContactUs extends StatelessWidget {
                           'open', ['https://facebook.com/ahmadalfrehan']);
                     }
                   },
-                  child: const Icon(Icons.facebook, color: colorWhite)),
+                  child: Image.asset(
+                    'assets/images/facebook.png',
+                    width: 23,
+                    height: 23,
+                  )),
               const SizedBox(width: 10),
               InkWell(
-                  onTap: () {
-                    if (kIsWeb) {
-                      js.context
-                          .callMethod('open', ['https://t.me/ahmadalfrehan']);
-                    }
-                  },
-                  child: const Icon(Icons.telegram, color: colorWhite)),
+                onTap: () {
+                  if (kIsWeb) {
+                    js.context
+                        .callMethod('open', ['https://t.me/ahmadalfrehan']);
+                  }
+                },
+                child: Image.asset(
+                  'assets/images/telegram.png',
+                  width: 23,
+                  height: 23,
+                ),
+              ),
               const SizedBox(width: 10),
-              // Image.asset('assets/images/git.png')
+              InkWell(
+                onTap: () {
+                  if (kIsWeb) {
+                    js.context
+                        .callMethod('open', ['https://wa.me/963982867881']);
+                  }
+                },
+                child: Image.asset(
+                  'assets/images/telegram.png',
+                  width: 23,
+                  height: 23,
+                ),
+              ),
 
-              // InkWell(
-              //     onTap: (){
-              //            js.context.callMethod('open', ['https://github.com/ahmadalfrehan']);
-              //     },
-              //     child: Image.asset('assets/images/git.png',width: 20,height: 20,color: Colors.white,)),
               const SizedBox(width: 10),
             ],
           ),
           const SizedBox(height: 23),
 
           if (MediaQuery.of(context).size.width > 480)
-            const SizedBox(height: 100),
+            const SizedBox(height: 20),
           Container(
             width: Get.width / 1.5,
             height: 8,

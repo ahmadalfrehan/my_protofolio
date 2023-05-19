@@ -1,11 +1,13 @@
+import 'dart:js' as js;
+
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:protofolio/presentation/my-projects/details-projects.dart';
 import 'package:protofolio/presentation/my-projects/getx/projects-controller.dart';
 
 import '../../config/style.dart';
-import 'dart:js' as js;
-import 'package:flutter/foundation.dart' show kIsWeb;
+
 class MyProjects extends StatelessWidget {
   const MyProjects({Key? key}) : super(key: key);
 
@@ -46,24 +48,23 @@ class MyProjects extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           SizedBox(
-            width: MediaQuery.of(context).size.height / 2,
+            width: MediaQuery.of(context).size.width / 1.5,
             // height: MediaQuery.of(context).size.height / 3.2,
             child: GridView.builder(
                 itemCount: ProjectsController.projectsList.length,
-                padding:  EdgeInsets.zero,
+                padding: EdgeInsets.zero,
                 // clipBehavior: Clip.none,
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-
-                gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   // crossAxisCount: 4,
                   crossAxisCount:
-                  MediaQuery.of(context).size.width > 480 ? 4 : 3,
+                      MediaQuery.of(context).size.width > 480 ? 4 : 3,
 
                   crossAxisSpacing: 0,
                   // mainAxisExtent: 150,
                   mainAxisExtent:
-                  MediaQuery.of(context).size.width > 480 ? 150 : 150,
+                      MediaQuery.of(context).size.width > 480 ? 250 : 150,
 
                   mainAxisSpacing: 0,
                 ),
@@ -74,7 +75,7 @@ class MyProjects extends StatelessWidget {
                         MaterialPageRoute(
                             builder: (context) => DetailsProjects(
                                 projectsEntity:
-                                    ProjectsController.projectsList[index])),
+                                ProjectsController.projectsList[index])),
                       );
                     },
                     child: Container(
@@ -88,8 +89,12 @@ class MyProjects extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Container(
-                              height: 70,
-                              width: 70,
+                              height: MediaQuery.of(context).size.width > 480
+                                  ? 150
+                                  : 70,
+                              width: MediaQuery.of(context).size.width > 480
+                                  ? 150
+                                  : 70,
                               decoration: BoxDecoration(
                                 boxShadow: const [
                                   BoxShadow(
@@ -101,18 +106,18 @@ class MyProjects extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(12),
                                 image: ProjectsController
                                             .projectsList[index].image ==
-                                        ''
+                                    ''
                                     ? null
                                     : DecorationImage(
-                                        fit: BoxFit.fill,
-                                        image: AssetImage(ProjectsController
-                                            .projectsList[index].image
-                                            .toString()),
-                                      ),
+                                  fit: BoxFit.fill,
+                                  image: AssetImage(ProjectsController
+                                      .projectsList[index].image
+                                      .toString()),
+                                ),
                               ),
                               child: ProjectsController
-                                          .projectsList[index].image ==
-                                      ''
+                                  .projectsList[index].image ==
+                                  ''
                                   ? const FlutterLogo(size: 70)
                                   : null,
                             ),

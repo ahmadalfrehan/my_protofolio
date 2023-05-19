@@ -57,29 +57,32 @@ class _MyCertificateState extends State<MyCertificate> {
           MediaQuery.of(context).size.width > 480
               ? Column(
                   children: [
+
+                    const SizedBox(height: 50),
                     Row(
                       children: [
-                        const SizedBox(height: 50),
+                        const SizedBox(width: 50),
                         _myCertificate(
                           'DCPC',
                           'dcpc',
                           'ICPC\n'
                               'Issued Sep 2021',
                           () {
-                            if(kIsWeb)
+                            if(kIsWeb) {
                               js.context.callMethod('open', ['https://drive.google.com/file/d/1bU-qDhr1VaGR2fAAgNqWxkgT2lelbHM0/view?usp=drivesdk']);
+                            }
                           },
                         ),
-                        const SizedBox(height: 50),
+                        const SizedBox(width: 50),
                         _myCertificate(
                             'Algorithmic Toolbox',
                             'algo',
                             ' UC San Diego\n'
                                 'Issued Dec 2020', () {
-                          if(kIsWeb)
+                          if(kIsWeb) {
                             js.context.callMethod('open', ['https://www.coursera.org/account/accomplishments/certificate/DWN5E3VJWJAH?utm_source=android&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course']);
+                          }
                         }),
-                        const SizedBox(height: 50),
                       ],
                     ),
                     const SizedBox(height: 50),
@@ -88,8 +91,9 @@ class _MyCertificateState extends State<MyCertificate> {
                         'google',
                         'Google\n'
                             'Issued Dec 2021', () {
-                      if(kIsWeb)
+                      if(kIsWeb) {
                         js.context.callMethod('open', ['https://www.coursera.org/account/accomplishments/certificate/JM3ZNUPPFT6S?utm_source=android&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course']);
+                      }
                     }),
                   ],
                 )
@@ -101,8 +105,9 @@ class _MyCertificateState extends State<MyCertificate> {
                         'dcpc',
                         'ICPC\n'
                             'Issued Sep 2021', () {
-                      if(kIsWeb)
+                      if(kIsWeb) {
                         js.context.callMethod('open', ['https://drive.google.com/file/d/1bU-qDhr1VaGR2fAAgNqWxkgT2lelbHM0/view?usp=drivesdk']);
+                      }
                     }),
                     const SizedBox(height: 50),
                     _myCertificate(
@@ -110,8 +115,9 @@ class _MyCertificateState extends State<MyCertificate> {
                         'algo',
                         ' UC San Diego\n'
                             'Issued Dec 2020', () {
-                      if(kIsWeb)
+                      if(kIsWeb) {
                         js.context.callMethod('open', ['https://www.coursera.org/account/accomplishments/certificate/DWN5E3VJWJAH?utm_source=android&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course']);
+                      }
                     }),
                     const SizedBox(height: 50),
                     _myCertificate(
@@ -119,13 +125,15 @@ class _MyCertificateState extends State<MyCertificate> {
                         'google',
                         'Google\n'
                             'Issued Dec 2021', () {
-                      if(kIsWeb)
+                      if(kIsWeb) {
                         js.context.callMethod('open', ['https://www.coursera.org/account/accomplishments/certificate/JM3ZNUPPFT6S?utm_source=android&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course']);
+                      }
 
                     }),
                     const SizedBox(height: 20),
                   ],
                 ),
+          const SizedBox(height: 50),
         _verticalCircles(),
         ],
       ),

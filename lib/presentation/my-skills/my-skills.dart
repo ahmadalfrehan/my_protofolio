@@ -127,12 +127,14 @@ class _MySkillsState extends State<MySkills>
                                   fontWeight: FontWeight.w800,
                                 ),
                               ),
-                            )
+                            ),
                           ],
                         );
                       }),
                 ),
-              )
+              ),
+
+              const SizedBox(height: 40),
             ],
           ),
         ),
