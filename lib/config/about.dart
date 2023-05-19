@@ -18,20 +18,31 @@ const String aboutMe =
     'I am A human who loves mobile development I am A human who loves mobile developmentI am A human who loves mobile developmentI am A human who loves mobile development';
 
  List<Skill> mySkills = [
-
+  Skill(image: 'assets/images/pngegg.png', skill: 'Payment Gateways'),
   Skill(image: 'assets/images/google-maps.png', skill: 'Google Maps API'),
-  Skill(image: 'assets/images/programming.png', skill: 'Object-Oriented Programming (OOP)'),
-  Skill(image: 'assets/images/firebase.png', skill: 'Firebase'),
-  Skill(image: 'assets/images/sql-server.png', skill: 'SQLite'),
-  Skill(image: 'assets/images/trello.png', skill: 'Trello'),
-  Skill(image: 'assets/images/linux.png', skill: 'Linux'),
   Skill(image: 'assets/images/flutter.png', skill: 'Flutter'),
   Skill(image: 'assets/images/c.png', skill: 'C++'),
   Skill(image: 'assets/images/java.png', skill: 'Java'),
+  Skill(image: 'assets/images/dart.png', skill: 'Dart'),
+  Skill(image: 'assets/images/firebase.png', skill: 'Firebase'),
+  Skill(image: 'assets/images/sqlite.png', skill: 'SQLite'),
+  Skill(
+      image: 'assets/images/programming.png',
+      skill: 'Object-Oriented Programming (OOP)'),
+  Skill(image: 'assets/images/linux.png', skill: 'Linux'),
   Skill(image: 'assets/images/shell.png', skill: 'Bash Script'),
   Skill(image: 'assets/images/shell.png', skill: 'Shell Script'),
+
+  Skill(image: 'assets/images/Git-Logo.png', skill: 'Git'),
   Skill(image: 'assets/images/git.png', skill: 'Github'),
   Skill(image: 'assets/images/gitlab.png', skill: 'Gitlab'),
+  Skill(image: 'assets/images/trello.png', skill: 'Trello'),
+  Skill(image: 'assets/images/problem-solving.png', skill: 'Problem Solving'),
+  Skill(image: 'assets/images/android.png', skill: 'Android SDK'),
+  Skill(
+      image: 'assets/images/android-studio-logo.png', skill: 'Android Studio'),
+  Skill(image: 'assets/images/clean-code.png', skill: 'Clean Code'),
+  Skill(image: 'assets/images/clean-code.png', skill: 'Clean Architecture'),
   // 'Payment Gateways',
   // 'Google Maps API',
   // 'Firebase',

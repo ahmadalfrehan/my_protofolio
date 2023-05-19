@@ -20,7 +20,7 @@ class DownloadCv extends StatelessWidget {
                 backgroundColor: colorHeadYellow,
                 fixedSize: Size(Get.width / 1.5, 40)),
             onPressed: () {
-              js.context.callMethod('open', ['']);
+              js.context.callMethod('open', ['https://drive.google.com/file/d/1W4_8s0DUf0YvNBhUswW4tsnHYFnOSUpn/view?usp=sharing']);
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,

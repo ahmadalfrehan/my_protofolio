@@ -7,9 +7,20 @@ import 'package:get/get.dart';
 import 'package:protofolio/config/style.dart';
 
 import '../../config/textStyle.dart';
+import 'controller.dart';
 
-class ContactUs extends StatelessWidget {
+class ContactUs extends StatefulWidget {
   const ContactUs({Key? key}) : super(key: key);
+
+  @override
+  State<ContactUs> createState() => _ContactUsState();
+}
+
+class _ContactUsState extends State<ContactUs> {
+  TextEditingController name = TextEditingController();
+  TextEditingController phone = TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController desc = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +47,10 @@ class ContactUs extends StatelessWidget {
               ),
             ],
           ),
-          _textField('Name', 'type ur name'),
-          _textField('Phone', 'type ur phone number'),
-          _textField('Email', 'type ur email'),
-          _textField('Description', 'type description'),
+          _textField('Name', 'type ur name', name),
+          _textField('Phone', 'type ur phone number', phone),
+          _textField('Email', 'type ur email', email),
+          _textField('Description', 'type description', desc),
           // _textField('Name', 'type ur name'),
           const SizedBox(height: 20),
           ElevatedButton(
@@ -50,9 +61,18 @@ class ContactUs extends StatelessWidget {
                   backgroundColor: colorHeadYellow,
                   fixedSize: Size(Get.width / 1.5, 40)),
               onPressed: () {
+                ContactUsController cont = ContactUsController(
+                    name: name.text,
+                    phone: phone.text,
+                    email: email.text,
+                    desc: desc.text);
+                cont.sendEmail();
                 // js.context.callMethod('open', ['${projectsEntity.url}']);
               },
-              child: const Text('Send',style: TextStyle(color: colorHead, fontWeight: FontWeight.bold),)),
+              child: const Text(
+                'Send',
+                style: TextStyle(color: colorHead, fontWeight: FontWeight.bold),
+              )),
           const SizedBox(height: 20),
           const Text(
             'you can also chat with me any where you want :',
@@ -62,7 +82,7 @@ class ContactUs extends StatelessWidget {
           const SizedBox(height: 35),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children:  [
+            children: [
               InkWell(
                   onTap: () {
                     if (kIsWeb) {
@@ -117,7 +137,6 @@ class ContactUs extends StatelessWidget {
                   height: 23,
                 ),
               ),
-
               const SizedBox(width: 10),
             ],
           ),
@@ -132,16 +151,18 @@ class ContactUs extends StatelessWidget {
                 color: colorHeadYellow, borderRadius: BorderRadius.circular(8)),
           ),
           const SizedBox(height: 50),
-
         ],
       ),
     );
   }
 
-  _textField(String label, String hint) {
+  _textField(
+      String label, String hint, TextEditingController textEditingController) {
     return TextFormField(
-      minLines: label=='description'?1:1,
-      maxLines: label=='description'?5:1,
+      style: TextStyle(color: Colors.white),
+      controller: textEditingController,
+      minLines: label == 'description' ? 1 : 1,
+      maxLines: label == 'description' ? 5 : 1,
       decoration: InputDecoration(
         border: const UnderlineInputBorder(
             borderSide: BorderSide(color: colorWhite)),
@@ -157,6 +178,7 @@ class ContactUs extends StatelessWidget {
               color: colorWhite, fontSize: 12, fontWeight: FontWeight.bold),
         ),
         hintText: hint,
+
         hintStyle: const TextStyle(
             color: colorWhite, fontSize: 12, fontWeight: FontWeight.w400),
       ),
