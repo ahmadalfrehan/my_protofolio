@@ -1,3 +1,5 @@
+import 'package:protofolio/presentation/my-skills/skill.dart';
+
 const String about =
     'I am a skilled Flutter developer with almost 2 years of experience in Flutter Hybrid mobile app development.\n\n'
     'My expertise includes:\n'
@@ -15,29 +17,42 @@ const String about =
 const String aboutMe =
     'I am A human who loves mobile development I am A human who loves mobile developmentI am A human who loves mobile developmentI am A human who loves mobile development';
 
-const List<String> mySkills = [
-  'Payment Gateways',
-  'Google Maps API',
-  'Firebase',
-  'SQLite',
-  'Object-Oriented Programming (OOP)',
-  'Bash',
-  'Shell Scripting',
-  'trello',
-  'Linux',
-  'Flutter',
-  'C++',
-  'Java',
-  'Dart',
-  'Git',
-  'Gitlab',
-  'GitHub',
-  'Problem Solving',
-  'Android Studio',
-  'Android SDK',
-  'Design Patterns',
-  'clean code',
-  'Troubleshooting',
-  'Troubleshooting',
-  'Communication',
+ List<Skill> mySkills = [
+
+  Skill(image: 'assets/images/google-maps.png', skill: 'Google Maps API'),
+  Skill(image: 'assets/images/programming.png', skill: 'Object-Oriented Programming (OOP)'),
+  Skill(image: 'assets/images/firebase.png', skill: 'Firebase'),
+  Skill(image: 'assets/images/sql-server.png', skill: 'SQLite'),
+  Skill(image: 'assets/images/trello.png', skill: 'Trello'),
+  Skill(image: 'assets/images/linux.png', skill: 'Linux'),
+  Skill(image: 'assets/images/flutter.png', skill: 'Flutter'),
+  Skill(image: 'assets/images/c.png', skill: 'C++'),
+  Skill(image: 'assets/images/java.png', skill: 'Java'),
+  Skill(image: 'assets/images/shell.png', skill: 'Bash Script'),
+  Skill(image: 'assets/images/shell.png', skill: 'Shell Script'),
+  Skill(image: 'assets/images/git.png', skill: 'Github'),
+  Skill(image: 'assets/images/gitlab.png', skill: 'Gitlab'),
+  // 'Payment Gateways',
+  // 'Google Maps API',
+  // 'Firebase',
+  // 'SQLite',
+  // 'Object-Oriented Programming (OOP)',
+  // 'Bash',
+  // 'Shell Scripting',
+  // 'trello',
+  // 'Linux',
+  // 'Flutter',
+  // 'C++',
+  // 'Java',
+  // 'Dart',
+  // 'Git',
+  // 'Gitlab',
+  // 'GitHub',
+  // 'Problem Solving',
+  // 'Android Studio',
+  // 'Android SDK',
+  // 'Design Patterns',
+  // 'clean code',
+  // 'Troubleshooting',
+  // 'Communication',
 ];

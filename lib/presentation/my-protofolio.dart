@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protofolio/presentation/contact-us/contact-us.dart';
+import 'package:protofolio/presentation/downloadCv/downloadCv.dart';
 import 'package:protofolio/presentation/my-certificate/my-certificate.dart';
 import 'package:protofolio/presentation/my-projects/my-projects.dart';
 
@@ -20,11 +21,13 @@ class _MyProtofolioState extends State<MyProtofolio> {
 
   @override
   Widget build(BuildContext context) {
-    ScrollController controller = ScrollController();
+    // ScrollController controller = ScrollController();
     return Scaffold(
       // appBar: AppBar(),
       body: SingleChildScrollView(
-        controller: controller,
+        // controller: controller,
+        physics: BouncingScrollPhysics(),
+        primary: true,
         child: Column(
           children: const [
             Head(),
@@ -35,6 +38,7 @@ class _MyProtofolioState extends State<MyProtofolio> {
             MyCertificate(),
             MyProjects(),
             MySkills(),
+            DownloadCv(),
             SizedBox(height: 20),
             ContactUs(),
           ],

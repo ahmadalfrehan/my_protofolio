@@ -171,9 +171,9 @@ class Education extends StatelessWidget {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          const Text(
-                            'Flutter Developer',
-                            style: TextStyle(
+                          Text(
+                            univ ?? 'Damascus University',
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 11,
                               fontWeight: FontWeight.w800,

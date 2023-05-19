@@ -25,7 +25,7 @@ class _MySkillsState extends State<MySkills>
   @override
   void initState() {
     _controller = AnimationController(
-      duration: const Duration(seconds: 5),
+      duration: const Duration(seconds: 15),
       vsync: this,
     );
     final curved = CurvedAnimation(
@@ -104,7 +104,7 @@ class _MySkillsState extends State<MySkills>
                               angle: animation!.value,
                               // angle: _controller?.value ?? 0 * 2 * math.pi,
                               child: Image.asset(
-                                'assets/images/skills.png',
+                                mySkills[index].image,
                                 width: MediaQuery.of(context).size.width > 480
                                     ? 90
                                     : 40,
@@ -116,7 +116,7 @@ class _MySkillsState extends State<MySkills>
                             SizedBox(height: ScreenStability.height(10)),
                             Expanded(
                               child: Text(
-                                mySkills[index],
+                                mySkills[index].skill,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontSize:

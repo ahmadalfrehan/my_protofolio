@@ -23,7 +23,7 @@ class _AboutMeState extends State<AboutMe> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     _controller = AnimationController(
-      duration: const Duration(seconds: 5),
+      duration: const Duration(seconds: 8),
       vsync: this,
     );
     final curved = CurvedAnimation(
@@ -82,10 +82,6 @@ class _AboutMeState extends State<AboutMe> with SingleTickerProviderStateMixin {
                           ),
                         ],
                         isRepeatingAnimation: false,
-                        // child: Text(
-                        //   about,
-                        //   style: TextStyleMyApp.textStyle6,
-                        // ),
                       ),
                       // ),
                     ),
