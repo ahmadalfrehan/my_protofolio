@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:protofolio/config/debug/screen-stability.dart';
 
 import '../../config/style.dart';
 import '../../config/textStyle.dart';
 
-class MyExperience extends StatelessWidget {
-  const MyExperience({Key? key}) : super(key: key);
+class Education extends StatelessWidget {
+  const Education({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var image =
-        'assets/images/future.png';
+    var image = 'assets/images/img.png';
+    var imageAlp = 'assets/images/aleppo.png';
     return Column(
       children: [
         Stack(
@@ -33,11 +32,11 @@ class MyExperience extends StatelessWidget {
                     Stack(
                       children: const [
                         Text(
-                          'My Experience',
+                          'Education',
                           style: TextStyleMyApp.textStyle8,
                         ),
                         Text(
-                          'My Experience',
+                          'Education',
                           style: TextStyleMyApp.textStyle5,
                         ),
                       ],
@@ -45,7 +44,7 @@ class MyExperience extends StatelessWidget {
                     const Spacer(),
                     const Expanded(
                       child: Text(
-                        'it was wonderfully to share my experiences with you',
+                        'lets share the education',
                         style: TextStyleMyApp.textStyle9,
                         maxLines: 3,
                       ),
@@ -63,11 +62,17 @@ class MyExperience extends StatelessWidget {
                         children: [
                           _squareLogo(context,
                               image: image,
-                              company: 'Future-Code . Full Time',
-                              time: 'Aug 2022 - May 2023'),
+                              company: 'Artificial Intelligence',
+                              time: 'Oct 2022 - Present'),
                           _squareLogo(context,
-                              company: 'Freelance',
-                              time: 'Nov 2021 - May 2023'),
+                              image: image,
+                              company: 'Student, Informatics Technology',
+                              time: 'Oct 2020 - Present'),
+                          _squareLogo(context,
+                              univ: 'Aleppo University',
+                              image: imageAlp,
+                              company: 'Student, Informatics Technology',
+                              time: 'Oct 2019 - Sep 2020'),
 
                           // _squareLogo(context),
                         ],
@@ -77,14 +82,19 @@ class MyExperience extends StatelessWidget {
                         children: [
                           _squareLogo(context,
                               image: image,
-                              company: 'Future-Code . Full Time',
-                              time: 'Aug 2022 - May 2023'),
-
+                              company: 'Artificial Intelligence',
+                              time: 'Oct 2022 - Present'),
                           SizedBox(height: ScreenStability.height(20)),
                           _squareLogo(context,
-                              company: 'Freelance',
-                              time: 'Nov 2021 - May 2023'),
+                              image: image,
+                              company: 'Student, Informatics Technology',
+                              time: 'Oct 2020 - Present'),
                           SizedBox(height: ScreenStability.height(20)),
+                          _squareLogo(context,
+                              univ: 'Aleppo University',
+                              image: imageAlp,
+                              company: 'Student, Informatics Technology',
+                              time: 'Oct 2019 - Sep 2020'),
                           // _squareLogo(context),
                         ],
                       ),
@@ -92,22 +102,12 @@ class MyExperience extends StatelessWidget {
             )
           ],
         ),
-        if (MediaQuery.of(context).size.width > 480)
-          const SizedBox(height: 100),
-        Container(
-          width: Get.width / 2,
-          height: 8,
-          decoration: BoxDecoration(
-              color: colorHead, borderRadius: BorderRadius.circular(8)),
-        ),
-        const SizedBox(height: 50),
-
       ],
     );
   }
 
   _squareLogo(BuildContext context,
-      {String? image, String? company, String? time}) {
+      {String? image, String? company, String? time, String? univ}) {
     return Container(
       height: MediaQuery.of(context).size.width > 480
           ? ScreenStability.height(400)
@@ -132,9 +132,9 @@ class MyExperience extends StatelessWidget {
                       _companyLogo(image: image),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
+                        children: [
                           Text(
-                            'Flutter Developer',
+                            univ ?? 'Damascus University',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 11,

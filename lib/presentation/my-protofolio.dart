@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:protofolio/presentation/contact-us/contact-us.dart';
 import 'package:protofolio/presentation/my-certificate/my-certificate.dart';
 import 'package:protofolio/presentation/my-projects/my-projects.dart';
+
 import 'about-me.dart';
+import 'education/education.dart';
 import 'head/head.dart';
 import 'my-experience/my-experenece.dart';
 import 'my-skills/my-skills.dart';
@@ -20,7 +22,7 @@ class _MyProtofolioState extends State<MyProtofolio> {
   Widget build(BuildContext context) {
     ScrollController controller = ScrollController();
     return Scaffold(
-      appBar: AppBar(),
+      // appBar: AppBar(),
       body: SingleChildScrollView(
         controller: controller,
         child: Column(
@@ -29,10 +31,10 @@ class _MyProtofolioState extends State<MyProtofolio> {
             AboutMe(),
             MyExperience(),
             SizedBox(height: 20),
+            Education(),
             MyCertificate(),
             MyProjects(),
             MySkills(),
-
             SizedBox(height: 20),
             ContactUs(),
           ],

@@ -56,7 +56,7 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                           children: [
                             Expanded(
                               child: Text(
-                                'I am Ahmad Al_Frehan',
+                                'Ahmad Al_Frehan',
                                 style: TextStyleMyApp.textStyle2,
                               ),
                             ),
@@ -76,21 +76,101 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 35),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            _projectsMine(
-                                num: '+4', project: 'Apps on Google Play'),
+                            _projectsMine(num: '+500', project: 'Linkedin Followers'),
                             const SizedBox(width: 10),
-                            _projectsMine(
-                                num: '+65', project: 'Repositories n GitHub'),
-                            const SizedBox(width: 10),
-                            _projectsMine(
-                                num: '+10', project: 'Private projects'),
+                            _projectsMine(num: '+4', project: 'Google Play Apps'),
+                            const SizedBox(width: 5),
+                            _projectsMine(num: '+65', project: 'Github Repositories'),
+                            const SizedBox(width: 5),
+                            _projectsMine(num: '+10', project: 'Gitlab Projects'),
                           ],
                         ),
-                        const SizedBox(height: 50)
+
+                        const SizedBox(height: 50),
+                        Row(
+                          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            InkWell(
+                                onTap: () {
+                                  if(kIsWeb)
+                                    js.context.callMethod('open', ['https://linkedin.com/in/ahmadalfrehan']);
+                                },
+                                child: Image.asset(
+                                  'assets/images/link.png',
+                                  width: 23,
+                                  height: 23,
+                                  // color: Colors.white,
+                                )),
+                            const SizedBox(width: 20),
+                            InkWell(
+                                onTap: () {
+                                  if(kIsWeb)
+                                    js.context.callMethod('open', ['https://play.google.com/store/apps/dev?id=8247791016528345285&hl=it&gl=US']);
+                                },
+                                child: Image.asset(
+                                  'assets/images/google-play.png',
+                                  width: 23,
+                                  height: 23,
+                                  // color: Colors.white,
+                                )),
+                            const SizedBox(width: 20),
+                            InkWell(
+                                onTap: () {
+                                  if(kIsWeb)
+                                    js.context.callMethod('open', ['https://facebook.com/ahmadalfrehan']);
+                                },
+                                child: Image.asset(
+                                  'assets/images/facebook.png',
+                                  width: 23,
+                                  height: 23,
+                                  // color: Colors.white,
+                                )),
+                            const SizedBox(width: 20),
+                            InkWell(
+                                onTap: () {
+                                  if(kIsWeb)
+                                    js.context.callMethod('open', ['https://t.me/ahmadalfrehan']);
+                                },
+                                child: Image.asset(
+                                  'assets/images/telegram.png',
+                                  width: 23,
+                                  height: 23,
+                                  // color: Colors.white,
+                                )),
+                            const SizedBox(width: 20),
+                            // const SizedBox(width: 10),
+                            // Image.asset('assets/images/git.png')
+
+                            InkWell(
+                                onTap: () {
+                                  if(kIsWeb)
+                                    js.context.callMethod('open', ['https://github.com/ahmadalfrehan']);
+                                },
+                                child: Image.asset(
+                                  'assets/images/git.png',
+                                  width: 23,
+                                  height: 23,
+                                  color: Colors.white,
+                                )),
+                            const SizedBox(width: 20),
+                            InkWell(
+                                onTap: () {
+                                  if(kIsWeb)
+                                    js.context.callMethod('open', ['https://gitlab.com/ahmadalfrehan']);
+                                },
+                                child: Image.asset(
+                                  'assets/images/gitlab.png',
+                                  width: 23,
+                                  height: 23,
+                                  // color: Colors.white,
+                                )),
+                          ],
+                        ),
+                        const SizedBox(height: 30)
                       ],
                     ),
                   ),
