@@ -79,22 +79,17 @@ class _MySkillsState extends State<MySkills>
                 ],
               ),
               const SizedBox(height: 10),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Expanded(
-                  // height: MediaQuery.of(context).size.height,
-                  child: GridView.builder(
-                      itemCount: mySkills.length,
-                      // clipBehavior: Clip.none,
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount:
-                            MediaQuery.of(context).size.width > 480 ? 4 : 3,
-                        crossAxisSpacing: 30,
-                        mainAxisExtent:
-                            MediaQuery.of(context).size.width > 480 ? 150 : 100,
-                        mainAxisSpacing: 5,
+              GridView.builder(
+                  itemCount: mySkills.length,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount:
+                        MediaQuery.of(context).size.width > 480 ? 4 : 3,
+                    crossAxisSpacing: 30,
+                    mainAxisExtent:
+                        MediaQuery.of(context).size.width > 480 ? 150 : 100,
+                    mainAxisSpacing: 5,
                       ),
                       itemBuilder: (context, index) {
                         return Column(
@@ -132,9 +127,6 @@ class _MySkillsState extends State<MySkills>
                           ],
                         );
                       }),
-                ),
-              ),
-
               const SizedBox(height: 40),
             ],
           ),
