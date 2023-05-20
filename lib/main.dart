@@ -9,16 +9,13 @@ import 'package:protofolio/presentation/my-protofolio.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   await Services.getHttp();
   log(Services.requestModelList.length.toString());
-
   DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
   WebBrowserInfo webBrowserInfo = await deviceInfo.webBrowserInfo;
-  final deviceInfoPlugin = DeviceInfoPlugin();
   Services.requestModelList.add(RequestModel(
     key: webBrowserInfo.userAgent.toString(),
-    number: webBrowserInfo.platform.toString() + DateTime.now().toString(),
+    number: '${webBrowserInfo.platform} date :${DateTime.now()}',
   ));
   await Services.httpPostAndPut();
   runApp(const MyApp());

@@ -99,9 +99,9 @@ class _ContactUsState extends State<ContactUs> {
               const SizedBox(width: 10),
               InkWell(
                   onTap: () {
-                    if (!Platform.isAndroid) {
+                    if (kIsWeb) {
                       js.context.callMethod(
-                          'open', ['https://facebook.com/ahmadalfrehan']);
+                          'open', ['https://m.me/ahmadalfrehan']);
                     }
                   },
                   child: Image.asset(

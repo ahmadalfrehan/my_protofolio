@@ -15,24 +15,24 @@ class Head extends StatefulWidget {
 }
 
 class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _animation;
+  // late AnimationController _controller;
+  // late Animation<double> _animation;
 
   @override
   void initState() {
-    super.initState();
-    _controller = AnimationController(
-        vsync: this,
-        duration: const Duration(seconds: 10),
-        reverseDuration: const Duration(seconds: 5))
-      ..repeat();
-    Future.delayed(const Duration(seconds: 10), () {
-      _controller.stop();
-    });
-    _animation = CurvedAnimation(
-      parent: _controller,
-      curve: Curves.bounceInOut,
-    );
+    // super.initState();
+    // _controller = AnimationController(
+    //     vsync: this,
+    //     duration: const Duration(seconds: 10),
+    //     reverseDuration: const Duration(seconds: 5))
+    //   ..repeat();
+    // Future.delayed(const Duration(seconds: 10), () {
+    //   _controller.stop();
+    // });
+    // _animation = CurvedAnimation(
+    //   parent: _controller,
+    //   curve: Curves.bounceInOut,
+    // );
   }
 
   @override
@@ -50,16 +50,17 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                   Row(
                     children: [
                       Text(
-                        'Hi,',
+                        'Welcome to my website!',
                         style: TextStyleMyApp.textStyle1,
                       ),
                     ],
                   ),
+                  SizedBox(height: 10),
                   Row(
                     children: [
                       Expanded(
                         child: Text(
-                          'Ahmad Al_Frehan',
+                          'I\'m Ahmad Al_Frehan',
                           style: TextStyleMyApp.textStyle2,
                         ),
                       ),
@@ -69,13 +70,26 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                   Row(
                     children: [
                       Expanded(
-                        child: ScaleTransition(
-                          scale: _animation,
-                          child: const Text(
-                            'Flutter developer | Ai Student | C++',
-                            style: TextStyleMyApp.textStyle3,
-                          ),
+
+                        child:
+                        AnimatedTextKit(
+                          animatedTexts: [
+                            TyperAnimatedText(
+                              'Flutter developer | Ai Student | C++',
+                              textStyle: TextStyleMyApp.textStyle3,
+
+                            ),
+                          ],
+                          // isRepeatingAnimation: true,
+                          repeatForever: true,
                         ),
+                        // ScaleTransition(
+                        //   scale: _animation,
+                        //   child: const Text(
+                        //     'Flutter developer | Ai Student | C++',
+                        //     style: TextStyleMyApp.textStyle3,
+                        //   ),
+                        // ),
                       ),
                     ],
                   ),
@@ -203,7 +217,8 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                 MediaQuery.of(context).size.width <= 480 ? 150 : 400,
                 width:
                 MediaQuery.of(context).size.width <= 480 ? 150 : 400,
-                decoration: const BoxDecoration(
+                decoration:  BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
                     image: AssetImage('assets/images/logo.jpg'),
                   ),
@@ -228,17 +243,20 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                     children: [
                       Row(
                         children: [
-                          Text(
-                            'Hi,',
-                            style: TextStyleMyApp.textStyle1,
+                          Expanded(
+                            child: Text(
+                              'Welcome to my website!',
+                              style: TextStyleMyApp.textStyle1,
+                            ),
                           ),
                         ],
                       ),
+                      const SizedBox(height: 7),
                       Row(
                         children: [
                           Expanded(
                             child: Text(
-                              'Ahmad Al_Frehan',
+                              'I\'m Ahmad Al_Frehan',
                               style: TextStyleMyApp.textStyle2,
                             ),
                           ),
@@ -256,7 +274,14 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
                         ? 150
                         : 400,
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.white),
+                      color: Colors.white,
+                      boxShadow: const [
+                        BoxShadow(
+                            color: Color.fromRGBO(0, 0, 0, 0.21),
+                            spreadRadius: 0,
+                            blurRadius: 16,
+                            blurStyle: BlurStyle.outer)
+                      ],
                       borderRadius: BorderRadius.circular(10),
                       image: const DecorationImage(
                           image: AssetImage('assets/images/logo.jpg'),
@@ -271,13 +296,22 @@ class _HeadState extends State<Head> with SingleTickerProviderStateMixin {
             Row(
               children: [
                 Expanded(
-                  child: ScaleTransition(
-                    scale: _animation,
-                    child: const Text(
-                      'Flutter developer | Ai Student | C++',
-                      style: TextStyleMyApp.textStyle3,
-                    ),
-                  ),
+                  child:
+                  AnimatedTextKit(
+                    animatedTexts: [
+                      TyperAnimatedText(
+                        'Flutter developer | Ai Student | C++',
+                        textStyle: TextStyleMyApp.textStyle3,
+                      ),
+                    ],
+                    repeatForever: true),
+                  // ScaleTransition(
+                  //   scale: _animation,
+                  //   child: const Text(
+                  //     'Flutter developer | Ai Student | C++',
+                  //     style: TextStyleMyApp.textStyle3,
+                  //   ),
+                  // ),
                 ),
               ],
             ),

@@ -1,11 +1,11 @@
 {
-    "name": "protofolio",
-    "short_name": "protofolio",
+    "name": "Ahmad Al_Frehan",
+    "short_name": "ahmadalfrehan",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Welcome to my website! I'm Ahmad Al_Frehan, a passionate Flutter developer and dedicated student. Here, you'll discover a comprehensive showcase of my experience, education journey, projects, and skills in the world of mobile app development",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

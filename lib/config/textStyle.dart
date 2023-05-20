@@ -6,13 +6,13 @@ class TextStyleMyApp {
   static  TextStyle textStyle1 = TextStyle(
     color: Colors.white,
     fontWeight: FontWeight.w800,
-    fontSize: Get.width>480? 30:18,
+    fontSize: Get.width>480? 25:13,
     //fontFamily: 'Karla',
   );
   static TextStyle textStyle2 = TextStyle(
     color: colorHeadYellow,
     fontWeight: FontWeight.w800,
-    fontSize: Get.width>480? 30:16,
+    fontSize: Get.width>480? 30:17,
   );
   static const TextStyle textStyle3 = TextStyle(
     color: colorHeadGrey,
