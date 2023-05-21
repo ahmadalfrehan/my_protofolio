@@ -73,18 +73,18 @@ class _AboutMeState extends State<AboutMe> with SingleTickerProviderStateMixin {
                 ),
                 Row(
                   children: [
-                    Expanded(
-                      child: AnimatedTextKit(
-                        animatedTexts: [
-                          TyperAnimatedText(
+                    const Expanded(
+                      child: Text(
+                        // animatedTexts: [
+                        //   TyperAnimatedText(
                             about,
-                            textStyle: TextStyleMyApp.textStyle6,
+                            style: TextStyleMyApp.textStyle6,
                           ),
-                        ],
-                        isRepeatingAnimation: false,
+                        // ],
+                        // isRepeatingAnimation: false,
                       ),
                       // ),
-                    ),
+                    // ),
                     Transform.rotate(
                       angle: animation!.value,
                       child: Container(
