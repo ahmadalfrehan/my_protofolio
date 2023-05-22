@@ -37,11 +37,12 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   http: ^0.13.5
-  flutter_bloc: ^8.1.1
+#  flutter_bloc: ^8.1.1
   get: ^4.6.5
-  dartz: ^0.10.1
+#  dartz: ^0.10.1
   animated_text_kit: ^4.2.2
   device_info_plus: ^9.0.0
+#  web_smooth_scroll: ^1.1.0
 
 dev_dependencies:
   flutter_test:
