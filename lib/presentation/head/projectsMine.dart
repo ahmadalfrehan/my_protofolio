@@ -21,14 +21,19 @@ class ProjectsMine extends StatelessWidget {
             style: TextStyleMyApp.textStyle4,
           ),
           MediaQuery.of(context).size.width > 480
-              ? AnimatedTextKit(
-                  animatedTexts: [
-                    WavyAnimatedText(project ?? '',
-                        textStyle: TextStyleMyApp.textStyle3)
-                  ],
-                  isRepeatingAnimation: false,
+              ? Semantics(
+                  label: project ?? '',
+                  child: AnimatedTextKit(
+                    animatedTexts: [
+                      WavyAnimatedText(project ?? '',
+                          textStyle: TextStyleMyApp.textStyle3)
+                    ],
+                    isRepeatingAnimation: false,
+                  ),
                 )
-              : Text(project ?? '', style: TextStyleMyApp.textStyle3),
+              : Semantics(
+                  label: project ?? '',
+                  child: Text(project ?? '', style: TextStyleMyApp.textStyle3)),
         ],
       ),
     );

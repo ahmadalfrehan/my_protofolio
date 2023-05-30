@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:js' as js;
 
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -47,10 +46,10 @@ class _ContactUsState extends State<ContactUs> {
               ),
             ],
           ),
-          _textField('Name', 'type ur name', name),
-          _textField('Phone', 'type ur phone number', phone),
-          _textField('Email', 'type ur email', email),
-          _textField('Description', 'type description', desc),
+          _textField('Name', 'Type your name', name),
+          _textField('Phone', 'Type your phone number', phone),
+          _textField('Email', 'Type your email', email),
+          _textField('Description', 'Type description', desc),
           // _textField('Name', 'type ur name'),
           const SizedBox(height: 20),
           ElevatedButton(
@@ -75,7 +74,7 @@ class _ContactUsState extends State<ContactUs> {
               )),
           const SizedBox(height: 20),
           const Text(
-            'you can also chat with me any where you want :',
+            'You can also chat with me any where you want :',
             style: TextStyle(
                 color: colorWhite, fontSize: 15, fontWeight: FontWeight.w400),
           ),
@@ -159,7 +158,7 @@ class _ContactUsState extends State<ContactUs> {
   _textField(
       String label, String hint, TextEditingController textEditingController) {
     return TextFormField(
-      style: TextStyle(color: Colors.white),
+      style: const TextStyle(color: Colors.white),
       controller: textEditingController,
       minLines: label == 'description' ? 1 : 1,
       maxLines: label == 'description' ? 5 : 1,

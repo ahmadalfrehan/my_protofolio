@@ -111,19 +111,22 @@ class _MySkillsState extends State<MySkills>
                             ),
                             SizedBox(height: ScreenStability.height(10)),
                             Expanded(
-                              child: Text(
-                                mySkills[index].skill,
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize:
-                                  MediaQuery.of(context).size.width > 480
-                                          ? 20
-                                          : 13,
-                                  color: colorWhite,
-                                  fontWeight: FontWeight.w800,
-                                ),
+                          child: Semantics(
+                            label: mySkills[index].skill,
+                            child: Text(
+                              mySkills[index].skill,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize:
+                                    MediaQuery.of(context).size.width > 480
+                                        ? 20
+                                        : 13,
+                                color: colorWhite,
+                                fontWeight: FontWeight.w800,
                               ),
                             ),
+                          ),
+                        ),
                           ],
                         );
                       }),

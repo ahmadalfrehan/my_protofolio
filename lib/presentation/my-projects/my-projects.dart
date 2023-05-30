@@ -124,14 +124,19 @@ class MyProjects extends StatelessWidget {
                             ),
                             const SizedBox(height: 10),
                             Expanded(
-                              child: Text(
-                                ProjectsController.projectsList[index].name
+                              child: Semantics(
+                                label: ProjectsController
+                                    .projectsList[index].name
                                     .toString(),
-                                textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                    fontSize: 13,
-                                    color: colorHead,
-                                    fontWeight: FontWeight.w600),
+                                child: Text(
+                                  ProjectsController.projectsList[index].name
+                                      .toString(),
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                      fontSize: 13,
+                                      color: colorHead,
+                                      fontWeight: FontWeight.w600),
+                                ),
                               ),
                             ),
                           ],
@@ -144,10 +149,10 @@ class MyProjects extends StatelessWidget {
             children: [
               MaterialButton(
                 onPressed: () {
-                  // Navigator.of(context).push(MaterialPageRoute(
-                  //     builder: (context) => const AllProjects()));
-                  if(kIsWeb)
-                    js.context.callMethod('open', ['https://github.com/ahmadalfrehan?tab=repositories']);
+                  if (kIsWeb) {
+                    js.context.callMethod('open',
+                        ['https://github.com/ahmadalfrehan?tab=repositories']);
+                  }
                 },
                 child: const Text('Show more >'),
               ),

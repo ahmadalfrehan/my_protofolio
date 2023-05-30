@@ -213,7 +213,6 @@ class Head extends StatelessWidget {
                         ),
                       ),
                       alignment: Alignment.bottomCenter,
-                      //  child: Text('Ahmad',style:TextStyleMyApp.textStyle1,),
               ),
             ),
             const SizedBox(width: 10),
@@ -233,22 +232,28 @@ class Head extends StatelessWidget {
                       Row(
                         children: [
                           Expanded(
-                            child: Text(
-                              'Welcome to my website!',
-                              style: TextStyleMyApp.textStyle1,
-                            ),
-                          ),
+                                  child: Semantics(
+                                    label: 'Welcome to my website!',
+                                    child: Text(
+                                      'Welcome to my website!',
+                                      style: TextStyleMyApp.textStyle1,
+                                    ),
+                                  ),
+                                ),
                         ],
                       ),
                       const SizedBox(height: 7),
                       Row(
                         children: [
                           Expanded(
-                            child: Text(
-                              'I\'m Ahmad Al_Frehan',
-                              style: TextStyleMyApp.textStyle2,
-                            ),
-                          ),
+                                  child: Semantics(
+                                    label: 'I\'m Ahmad Al_Frehan',
+                                    child: Text(
+                                      'I\'m Ahmad Al_Frehan',
+                                      style: TextStyleMyApp.textStyle2,
+                                    ),
+                                  ),
+                                ),
                         ],
                       ),
                     ],

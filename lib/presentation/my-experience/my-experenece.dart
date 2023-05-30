@@ -43,22 +43,31 @@ class MyExperience extends StatelessWidget {
                       ],
                     ),
                     const Spacer(),
-                    MediaQuery.of(context).size.width > 480
-                        ? const Text(
+                    if (MediaQuery.of(context).size.width > 480)
+                      Semantics(
+                        label:
                             'Experiential Chronicles: Unveiling the Transformative Chapters of my Journey',
-                            style: TextStyleMyApp.textStyle9,
-                          )
-                        : const Expanded(
-                            child: Text(
+                        child: const Text(
+                          'Experiential Chronicles: Unveiling the Transformative Chapters of my Journey',
+                          style: TextStyleMyApp.textStyle9,
+                        ),
+                      )
+                    else
+                      Expanded(
+                        child: Semantics(
+                          label:
                               'Experiential Chronicles: Unveiling the Transformative Chapters of my Journey',
-                              style: TextStyle(
-                                color: colorDarkBlue,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 12,
-                              ),
-                              // maxLines: 3,
+                          child: const Text(
+                            'Experiential Chronicles: Unveiling the Transformative Chapters of my Journey',
+                            style: TextStyle(
+                              color: colorDarkBlue,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 12,
                             ),
+                            // maxLines: 3,
                           ),
+                        ),
+                      ),
                   ],
                 ),
               ),
@@ -134,30 +143,76 @@ class MyExperience extends StatelessWidget {
             SizedBox(height: ScreenStability.height(20)),
           if (MediaQuery.of(context).size.width > 480)
             SizedBox(height: ScreenStability.height(10)),
-          MediaQuery.of(context).size.width > 480
-              ? Expanded(
-                  child: Column(
+          if (MediaQuery.of(context).size.width > 480)
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  _companyLogo(image: image),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Semantics(
+                        label: 'Flutter Developer',
+                        child: const Text(
+                          'Flutter Developer',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 11,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Semantics(
+                    label: '$company',
+                    child: Text('$company',
+                        style: const TextStyle(
+                          color: colorWhite,
+                          fontSize: 10,
+                        )),
+                  ),
+                  Text(
+                    '$time',
+                    style: const TextStyle(
+                      color: colorWhite,
+                      fontSize: 10,
+                    ),
+                  ),
+                ],
+              ),
+            )
+          else
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  _companyLogo(image: image),
+                  Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      _companyLogo(image: image),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Text(
-                            'Flutter Developer',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 11,
-                              fontWeight: FontWeight.w800,
-                            ),
+                      Semantics(
+                        label: 'Flutter Developer',
+                        child: const Text(
+                          'Flutter Developer',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 11,
+                            fontWeight: FontWeight.w800,
                           ),
-                        ],
+                        ),
                       ),
-                      Text('$company',
+                      Semantics(
+                        label: '$company',
+                        child: Text(
+                          '$company',
                           style: const TextStyle(
                             color: colorWhite,
                             fontSize: 10,
-                          )),
+                          ),
+                        ),
+                      ),
                       Text(
                         '$time',
                         style: const TextStyle(
@@ -166,39 +221,6 @@ class MyExperience extends StatelessWidget {
                         ),
                       ),
                     ],
-                  ),
-                )
-              : Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      _companyLogo(image: image),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          const Text(
-                            'Flutter Developer',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 11,
-                              fontWeight: FontWeight.w800,
-                            ),
-                          ),
-                          Text(
-                            '$company',
-                            style: const TextStyle(
-                              color: colorWhite,
-                              fontSize: 10,
-                            ),
-                          ),
-                          Text(
-                            '$time',
-                            style: const TextStyle(
-                              color: colorWhite,
-                              fontSize: 10,
-                            ),
-                          ),
-                        ],
                       ),
                     ],
                   ),

@@ -1,6 +1,5 @@
 import 'dart:math' as math;
 
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:protofolio/config/textStyle.dart';
 
@@ -73,17 +72,20 @@ class _AboutMeState extends State<AboutMe> with SingleTickerProviderStateMixin {
                 ),
                 Row(
                   children: [
-                    const Expanded(
-                      child: Text(
-                        // animatedTexts: [
-                        //   TyperAnimatedText(
-                            about,
-                            style: TextStyleMyApp.textStyle6,
-                          ),
-                        // ],
-                        // isRepeatingAnimation: false,
+                    Expanded(
+                      child: Semantics(
+                        label: about,
+                        child: const Text(
+                          // animatedTexts: [
+                          //   TyperAnimatedText(
+                          about,
+                          style: TextStyleMyApp.textStyle6,
+                        ),
                       ),
-                      // ),
+                      // ],
+                      // isRepeatingAnimation: false,
+                    ),
+                    // ),
                     // ),
                     Transform.rotate(
                       angle: animation!.value,
