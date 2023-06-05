@@ -428,27 +428,27 @@ class Head extends StatelessWidget {
                     onTap: () {
                       if(kIsWeb) {
                         js.context.callMethod('open', ['https://gitlab.com/ahmadalfrehan']);
-                      }
-                    },
-                    child: Image.asset(
-                      'assets/images/gitlab.png',
-                      width: 23,
-                      height: 23,
-                      // color: Colors.white,
-                    )),
-              ],
-            ),
-            const SizedBox(height: 40),
-            Row(
-              children: const [
-                Text(
-                  'Articles ->',
-                  style: TextStyleMyApp.textStyle3,
-                )
-              ],
-            ),
-            const SizedBox(height: 30)
-          ],
+                            }
+                          },
+                          child: Image.asset(
+                            'assets/images/gitlab.png',
+                            width: 23,
+                            height: 23,
+                            // color: Colors.white,
+                          )),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
+                    children: const [
+                      Text(
+                        'Articles ->',
+                        style: TextStyleMyApp.textStyle3,
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 30)
+                ],
         ),
       ),
     );
