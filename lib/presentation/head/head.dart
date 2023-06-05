@@ -199,10 +199,16 @@ class Head extends StatelessWidget {
 
                         const SizedBox(height: 40),
                         Row(
-                          children: const [
-                            Text(
-                              'Articles ->',
-                              style: TextStyleMyApp.textStyle3,
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                js.context.callMethod('open',
+                                    ['https://ahmadalfrehan.com/articles']);
+                              },
+                              child: Text(
+                                'Articles ->',
+                                style: TextStyleMyApp.textStyle3,
+                              ),
                             )
                           ],
                         ),
@@ -440,10 +446,16 @@ class Head extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   Row(
-                    children: const [
-                      Text(
-                        'Articles ->',
-                        style: TextStyleMyApp.textStyle3,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          js.context.callMethod(
+                              'open', ['https://ahmadalfrehan.com/articles']);
+                        },
+                        child: Text(
+                          'Articles ->',
+                          style: TextStyleMyApp.textStyle3,
+                        ),
                       )
                     ],
                   ),
