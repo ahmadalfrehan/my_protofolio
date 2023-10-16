@@ -18,10 +18,10 @@ class MyProjects extends StatelessWidget {
       //height: Get.height/4,
       child: Column(
         children: [
-          Row(
+          const Row(
             children: [
               Stack(
-                children: const [
+                children: [
                   Text(
                     'My Projects',
                     style: TextStyle(
@@ -71,12 +71,19 @@ class MyProjects extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return MaterialButton(
                     onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                            builder: (context) => DetailsProjects(
-                                projectsEntity:
-                                ProjectsController.projectsList[index])),
-                      );
+                      if(ProjectsController.projectsList[index].name=="hewaiti"){
+                        js.context
+                            .callMethod('open', ['https://ahmadalfrehan.com/projects?name=hewaiti']);
+                      }
+                      else {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  DetailsProjects(
+                                      projectsEntity:
+                                      ProjectsController.projectsList[index])),
+                        );
+                      }
                     },
                     child: Container(
                         height: 220,

@@ -52,7 +52,7 @@ class Head extends StatelessWidget {
                               child: AnimatedTextKit(
                                 animatedTexts: [
                                   TyperAnimatedText(
-                                    'Flutter developer | Ai Student | C++',
+                                    'Flutter Developer | AI Student | C++',
                                     textStyle: TextStyleMyApp.textStyle3,
                                   ),
                                 ],
@@ -74,7 +74,7 @@ class Head extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: const [
                             ProjectsMine(
-                              num: '+500',
+                              num: '+750',
                               project: 'Linkedin Followers',
                             ),
                             SizedBox(width: 10),
@@ -84,7 +84,7 @@ class Head extends StatelessWidget {
                             ),
                             SizedBox(width: 5),
                             ProjectsMine(
-                              num: '+65',
+                              num: '+80',
                               project: 'Github Repositories',
                             ),
                             SizedBox(width: 5),
@@ -308,7 +308,7 @@ class Head extends StatelessWidget {
                       Expanded(
                         child: AnimatedTextKit(animatedTexts: [
                           TyperAnimatedText(
-                            'Flutter developer | Ai Student | C++',
+                            'Flutter Developer | AI Student | C++',
                             textStyle: TextStyleMyApp.textStyle3,
                           ),
                         ], repeatForever: true),
@@ -322,7 +322,7 @@ class Head extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       ProjectsMine(
-                        num: '+500',
+                        num: '+750',
                         project: 'Linkedin Followers',
                       ),
                       SizedBox(width: 2),
@@ -332,7 +332,7 @@ class Head extends StatelessWidget {
                       ),
                       SizedBox(width: 5),
                       ProjectsMine(
-                        num: '+65',
+                        num: '+80',
                         project: 'Github Repositories',
                       ),
                       SizedBox(width: 5),
