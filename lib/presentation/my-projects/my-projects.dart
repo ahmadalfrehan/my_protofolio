@@ -75,6 +75,10 @@ class MyProjects extends StatelessWidget {
                         js.context
                             .callMethod('open', ['https://ahmadalfrehan.com/projects?name=hewaiti']);
                       }
+                      if(ProjectsController.projectsList[index].name=="Travi"){
+                        js.context
+                            .callMethod('open', ['https://ahmadalfrehan.com/projects?name=travi']);
+                      }
                       else {
                         Navigator.of(context).push(
                           MaterialPageRoute(

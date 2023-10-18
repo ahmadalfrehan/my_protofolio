@@ -70,9 +70,9 @@ class Head extends StatelessWidget {
                           ],
                         ),
                         const SizedBox(height: 35),
-                        Row(
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
+                          children: [
                             ProjectsMine(
                               num: '+750',
                               project: 'Linkedin Followers',
@@ -205,7 +205,7 @@ class Head extends StatelessWidget {
                                 js.context.callMethod('open',
                                     ['https://ahmadalfrehan.com/articles']);
                               },
-                              child: Text(
+                              child: const Text(
                                 'Articles ->',
                                 style: TextStyleMyApp.textStyle3,
                               ),
@@ -317,10 +317,10 @@ class Head extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   // Divider(color: Colors.white),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children: [
                       ProjectsMine(
                         num: '+750',
                         project: 'Linkedin Followers',
@@ -452,7 +452,7 @@ class Head extends StatelessWidget {
                           js.context.callMethod(
                               'open', ['https://ahmadalfrehan.com/articles']);
                         },
-                        child: Text(
+                        child: const Text(
                           'Articles ->',
                           style: TextStyleMyApp.textStyle3,
                         ),
