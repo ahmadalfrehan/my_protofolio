@@ -29,8 +29,8 @@ class Education extends StatelessWidget {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Stack(
-                      children: const [
+                    const Stack(
+                      children: [
                         Text(
                           'Education',
                           style: TextStyleMyApp.textStyle8,
@@ -134,7 +134,7 @@ class Education extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      _companyLogo(image: image),
+                      _companyLogo(image: image,context),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -167,7 +167,7 @@ class Education extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      _companyLogo(image: image),
+                      _companyLogo(image: image,context),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
@@ -203,14 +203,17 @@ class Education extends StatelessWidget {
     );
   }
 
-  _companyLogo({String? image}) {
+  _companyLogo(BuildContext context,{String? image}) {
     return Container(
       padding: EdgeInsets.all(image != null ? 1.2 : 3),
       decoration: BoxDecoration(
           color: colorWhite, borderRadius: BorderRadius.circular(5)),
       child: image == null
-          ? const FlutterLogo(style: FlutterLogoStyle.stacked, size: 60)
-          : Image.asset(image, height: 60, width: 60),
+          ?  FlutterLogo(style: FlutterLogoStyle.stacked, size: MediaQuery.of(context).size.width > 480
+          ?150: 60)
+          : Image.asset(image, height: MediaQuery.of(context).size.width > 480
+          ?150: 60, width: MediaQuery.of(context).size.width > 480
+          ?150: 60),
     );
   }
 }

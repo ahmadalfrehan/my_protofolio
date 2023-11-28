@@ -31,10 +31,10 @@ class _MyCertificateState extends State<MyCertificate> {
                 color: colorHeadYellow, borderRadius: BorderRadius.circular(8)),
           ),
           const SizedBox(height: 50),
-          Row(
+          const Row(
             children: [
               Stack(
-                children: const [
+                children: [
                   Text(
                     'My Certification',
                     style: TextStyle(
@@ -91,7 +91,21 @@ class _MyCertificateState extends State<MyCertificate> {
                 ],
               ),
               const SizedBox(height: 50),
-              _myCertificate(
+              Row(children: [
+                const SizedBox(width: 50),
+                _myCertificate(
+                  'Intro to Machine Learning',
+                  'kaggle',
+                  'Kaggle\n'
+                      'Issued nov 2023',
+                      () {
+                    if(kIsWeb) {
+                      js.context.callMethod('open', ['https://ahmadalfrehan.com/storage/images/Ahmad%20Al_Frehan%20-%20Intro%20to%20Machine%20Learning.png']);
+                    }
+                  },
+                ),
+                const SizedBox(width: 50),
+                _myCertificate(
                   'Google Ux',
                   'google',
                   'Google\n'
@@ -100,10 +114,23 @@ class _MyCertificateState extends State<MyCertificate> {
                   js.context.callMethod('open', ['https://www.coursera.org/account/accomplishments/certificate/JM3ZNUPPFT6S?utm_source=android&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course']);
                 }
               }),
+              ],)
             ],
           )
               : Column(
             children: [
+              const SizedBox(height: 50),
+              _myCertificate(
+                'Intro to Machine Learning',
+                'kaggle',
+                'Kaggle\n'
+                    'Issued nov 2023',
+                    () {
+                  if(kIsWeb) {
+                    js.context.callMethod('open', ['https://ahmadalfrehan.com/storage/images/Ahmad%20Al_Frehan%20-%20Intro%20to%20Machine%20Learning.png']);
+                  }
+                },
+              ),
               const SizedBox(height: 50),
               _myCertificate(
                   'DCPC',

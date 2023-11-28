@@ -19,34 +19,34 @@ class _MySkillsState extends State<MySkills>
   // late final AnimationController _controller =
   // AnimationController(vsync: this, duration: const Duration(seconds: 3))
   //   ..repeat();
-  AnimationController? _controller;
-  Animation<double>? animation;
+  // AnimationController? _controller;
+  // Animation<double>? animation;
 
-  @override
-  void initState() {
-    _controller = AnimationController(
-      duration: const Duration(seconds: 19),
-      vsync: this,
-    );
-    final curved = CurvedAnimation(
-      parent: _controller as Animation<double>,
-      curve: Curves.bounceInOut,
-      reverseCurve: Curves.easeInOut,
-    );
-    animation = Tween<double>(begin: 0, end: 2 * math.pi).animate(curved)
-      ..addListener(() {
-        setState(() {});
-      })
-      ..addStatusListener((status) {
-        if (status == AnimationStatus.completed) {
-          _controller!.reverse();
-        } else if (status == AnimationStatus.dismissed) {
-          _controller!.forward();
-        }
-      });
-    _controller!.forward();
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   _controller = AnimationController(
+  //     duration: const Duration(seconds: 19),
+  //     vsync: this,
+  //   );
+  //   final curved = CurvedAnimation(
+  //     parent: _controller as Animation<double>,
+  //     curve: Curves.bounceInOut,
+  //     reverseCurve: Curves.easeInOut,
+  //   );
+  //   animation = Tween<double>(begin: 0, end: 2 * math.pi).animate(curved)
+  //     ..addListener(() {
+  //       setState(() {});
+  //     })
+  //     ..addStatusListener((status) {
+  //       if (status == AnimationStatus.completed) {
+  //         _controller!.reverse();
+  //       } else if (status == AnimationStatus.dismissed) {
+  //         _controller!.forward();
+  //       }
+  //     });
+  //   _controller!.forward();
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -62,10 +62,10 @@ class _MySkillsState extends State<MySkills>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
+              const Row(
                 children: [
                   Stack(
-                    children: const [
+                    children: [
                       Text(
                         'My Skills',
                         style: TextStyleMyApp.textStyle7,
@@ -96,10 +96,11 @@ class _MySkillsState extends State<MySkills>
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Transform.rotate(
-                              angle: animation!.value,
-                              // angle: _controller?.value ?? 0 * 2 * math.pi,
-                              child: Image.asset(
+                            // Transform.rotate(
+                            //   angle: animation!.value,
+                            //   // angle: _controller?.value ?? 0 * 2 * math.pi,
+                            //   child:
+                              Image.asset(
                                 mySkills[index].image,
                                 width: MediaQuery.of(context).size.width > 480
                                     ? 90
@@ -108,7 +109,7 @@ class _MySkillsState extends State<MySkills>
                                     ? 90
                                     : 40,
                               ),
-                            ),
+                            // ),
                             SizedBox(height: ScreenStability.height(10)),
                             Expanded(
                           child: Semantics(

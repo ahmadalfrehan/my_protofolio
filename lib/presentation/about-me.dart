@@ -75,7 +75,7 @@ class _AboutMeState extends State<AboutMe> with SingleTickerProviderStateMixin {
                     Expanded(
                       child: Semantics(
                         label: about,
-                        child: const Text(
+                        child: const SelectableText(
                           // animatedTexts: [
                           //   TyperAnimatedText(
                           about,

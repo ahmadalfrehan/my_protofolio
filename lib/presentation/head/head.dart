@@ -74,7 +74,7 @@ class Head extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             ProjectsMine(
-                              num: '+750',
+                              num: '+850',
                               project: 'Linkedin Followers',
                             ),
                             SizedBox(width: 10),
@@ -322,7 +322,7 @@ class Head extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ProjectsMine(
-                        num: '+750',
+                        num: '+850',
                         project: 'Linkedin Followers',
                       ),
                       SizedBox(width: 2),

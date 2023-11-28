@@ -79,14 +79,17 @@ class MyProjects extends StatelessWidget {
                         js.context
                             .callMethod('open', ['https://ahmadalfrehan.com/projects?name=travi']);
                       }
-                      else {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  DetailsProjects(
-                                      projectsEntity:
-                                      ProjectsController.projectsList[index])),
-                        );
+                      if(ProjectsController.projectsList[index].name=="Redsys_with_Flutter"){
+                        js.context
+                            .callMethod('open', ['https://pub.dev/packages/redsys_with_flutter']);
+                      }
+                      if(ProjectsController.projectsList[index].name=="Clinic management"){
+                        js.context
+                            .callMethod('open', ['https://play.google.com/store/apps/details?id=com.clinic_managementtt.maybe']);
+                      }
+                      if(ProjectsController.projectsList[index].name=="imagin_true"){
+                        js.context
+                            .callMethod('open', ['https://play.google.com/store/apps/details?id=com.ahmad_alfrehan.imagin_true']);
                       }
                     },
                     child: Container(
