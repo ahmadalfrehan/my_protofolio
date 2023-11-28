@@ -18,6 +18,13 @@ const String aboutMe =
     'I am A human who loves mobile development I am A human who loves mobile developmentI am A human who loves mobile developmentI am A human who loves mobile development';
 
  List<Skill> mySkills = [
+  Skill(image: 'assets/images/Machine-learning-logo.png', skill: 'Machine Learning'),
+  Skill(image: 'assets/images/numpylogoicon.png', skill: 'NumPy'),
+  Skill(image: 'assets/images/scikit-learn-logo.png', skill: 'Scikit-Learn'),
+  Skill(image: 'assets/images/pandas.png', skill: 'Pandas (Software)'),
+  Skill(image: 'assets/images/neuralnetworkslogo.png', skill: 'Neural Networks'),
+  Skill(image: 'assets/images/python-logo.png', skill: 'Python'),
+  Skill(image: 'assets/images/fastapi.png', skill: 'FastAPI'),
   Skill(image: 'assets/images/pngegg.png', skill: 'Payment Gateways'),
   Skill(image: 'assets/images/google-maps.png', skill: 'Google Maps API'),
   Skill(image: 'assets/images/flutter.png', skill: 'Flutter'),
