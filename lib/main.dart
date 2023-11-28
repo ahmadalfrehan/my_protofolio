@@ -113,15 +113,13 @@ class Services {
 
   static httpPostAndPut() async {
     final response = await http.put(
-      Uri.parse('https://json.extendsclass.com/bin/5950f706448f'),
-
+      Uri.parse('https://json.extendsclass.com/bin/b74989954456'),
       ///https://json.extendsclass.com/bin/b16614671e0f
       headers: {
         'Api-key': '7d0e1b49-f49a-11ed-8cf9-0242ac110002',
         'Security-key': 'ahmadalfrehanahmadalfrehan',
         'Private': 'true',
       },
-
       body: json.encode({
         'data': [for (var i in requestModelList) RequestModel().toJson(i)]
       }),
@@ -133,7 +131,7 @@ class Services {
 
   static getHttp() async {
     final response = await http.get(
-      Uri.parse('https://json.extendsclass.com/bin/5950f706448f'),
+      Uri.parse('https://json.extendsclass.com/bin/b74989954456'),
       headers: {
         'Api-key': '7d0e1b49-f49a-11ed-8cf9-0242ac110002',
         'Security-key': 'ahmadalfrehanahmadalfrehan',

@@ -3,7 +3,6 @@ import 'dart:js' as js;
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:protofolio/presentation/my-projects/details-projects.dart';
 import 'package:protofolio/presentation/my-projects/getx/projects-controller.dart';
 
 import '../../config/style.dart';
@@ -66,34 +65,8 @@ class MyProjects extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return MaterialButton(
                     onPressed: () {
-                      if(ProjectsController.projectsList[index].name=="hewaiti"){
-                        js.context
-                            .callMethod('open', ['https://ahmadalfrehan.com/projects?name=hewaiti']);
-                      }
-                      if(ProjectsController.projectsList[index].name=="Travi"){
-                        js.context
-                            .callMethod('open', ['https://ahmadalfrehan.com/projects?name=travi']);
-                      }
-                      if(ProjectsController.projectsList[index].name=="Redsys_with_Flutter"){
-                        js.context
-                            .callMethod('open', ['https://pub.dev/packages/redsys_with_flutter']);
-                      }
-                      if(ProjectsController.projectsList[index].name=="Clinic management"){
-                        js.context
-                            .callMethod('open', ['https://play.google.com/store/apps/details?id=com.clinic_managementtt.maybe']);
-                      }
-                      if(ProjectsController.projectsList[index].name=="imagin_true"){
-                        js.context
-                            .callMethod('open', ['https://play.google.com/store/apps/details?id=com.ahmad_alfrehan.imagin_true']);
-                      }
-                      if(ProjectsController.projectsList[index].name=="Busco classes"){
-                        js.context
+                      js.context
                             .callMethod('open', [ProjectsController.projectsList[index].url]);
-                      }
-                      if(ProjectsController.projectsList[index].name=="HelpCo"){
-                        js.context
-                            .callMethod('open', [ProjectsController.projectsList[index].url]);
-                      }
                     },
                     child: Container(
                         height: 220,

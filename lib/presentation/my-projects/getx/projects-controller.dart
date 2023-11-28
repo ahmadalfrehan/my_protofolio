@@ -34,7 +34,7 @@ class ProjectsController extends GetxController {
           '',
       image: 'assets/images/travi-logo.png',
       url:
-          'https://play.google.com/store/apps/details?id=com.ahmadalfrehan.travi',
+          'https://ahmadalfrehan.com/projects?name=travi',
       date: 'date',
     ),
     ProjectsEntity(
@@ -48,7 +48,7 @@ class ProjectsController extends GetxController {
           '',
       image: 'assets/images/hew-logo.png',
       url:
-          'https://play.google.com/store/apps/details?id=com.ahmadalfrehan.hewaiti',
+         'https://ahmadalfrehan.com/projects?name=hewaiti',
       date: 'date',
     ),
     ProjectsEntity(
@@ -85,7 +85,7 @@ class ProjectsController extends GetxController {
       desc:
           'Redsys with Flutter it is a plugin package that call native code to perform some payment requests for redsys online bank',
       image: '',
-      url: 'https://github.com/ahmedalfrehan/redsys_with_flutter',
+      url: 'https://pub.dev/packages/redsys_with_flutter',
       date: 'date',
     ),
     ProjectsEntity(
