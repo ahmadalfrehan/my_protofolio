@@ -49,23 +49,18 @@ class MyProjects extends StatelessWidget {
           const SizedBox(height: 10),
           SizedBox(
             width: MediaQuery.of(context).size.width / 1.5,
-            // height: MediaQuery.of(context).size.height / 3.2,
             child: GridView.builder(
                 itemCount: ProjectsController.projectsList.length,
                 padding: EdgeInsets.zero,
-                // clipBehavior: Clip.none,
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  // crossAxisCount: 4,
+
                   crossAxisCount:
                       MediaQuery.of(context).size.width > 480 ? 4 : 3,
-
                   crossAxisSpacing: 0,
-                  // mainAxisExtent: 150,
                   mainAxisExtent:
                       MediaQuery.of(context).size.width > 480 ? 250 : 150,
-
                   mainAxisSpacing: 0,
                 ),
                 itemBuilder: (context, index) {
@@ -90,6 +85,14 @@ class MyProjects extends StatelessWidget {
                       if(ProjectsController.projectsList[index].name=="imagin_true"){
                         js.context
                             .callMethod('open', ['https://play.google.com/store/apps/details?id=com.ahmad_alfrehan.imagin_true']);
+                      }
+                      if(ProjectsController.projectsList[index].name=="Busco classes"){
+                        js.context
+                            .callMethod('open', [ProjectsController.projectsList[index].url]);
+                      }
+                      if(ProjectsController.projectsList[index].name=="HelpCo"){
+                        js.context
+                            .callMethod('open', [ProjectsController.projectsList[index].url]);
                       }
                     },
                     child: Container(

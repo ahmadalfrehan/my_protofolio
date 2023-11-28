@@ -82,10 +82,39 @@ class ProjectsController extends GetxController {
     ),
     ProjectsEntity(
       name: 'Redsys_with_Flutter',
-      desc: 'Redsys with Flutter it is a plugin package that call native code to perform some payment requests for redsys online bank',
+      desc:
+          'Redsys with Flutter it is a plugin package that call native code to perform some payment requests for redsys online bank',
       image: '',
+      url: 'https://github.com/ahmedalfrehan/redsys_with_flutter',
+      date: 'date',
+    ),
+    ProjectsEntity(
+      name: 'Busco classes',
+      desc: '',
+      image: 'assets/images/busco.jpg',
+      url: 'https://ahmadalfrehan.com/projects?name=buscocalsses',
+      date: 'date',
+    ),
+    ProjectsEntity(
+      name: 'Helpco',
+      desc: '',
+      image: 'assets/images/helpcologo.png',
+      url: 'https://ahmadalfrehan.com/projects?name=helpco',
+      date: 'date',
+    ),
+    ProjectsEntity(
+      name: 'House Price Prediction App (AI)',
+      desc: '',
+      image: '',
+      url: 'https://github.com/ahmadalfrehan/ui',
+      date: 'date',
+    ),
+    ProjectsEntity(
+      name: 'Alfrehan\'s painter',
+      desc: '',
+      image: 'assets/images/alfrehanpainterlogo.png',
       url:
-          'https://github.com/ahmedalfrehan/redsys_with_flutter',
+          'https://play.google.com/store/apps/details?id=com.ahmadalfrehan.alfrehanspainter',
       date: 'date',
     ),
   ];
