@@ -34,7 +34,7 @@ class ProjectsController extends GetxController {
           '',
       image: 'assets/images/travi-logo.png',
       url:
-          'https://ahmadalfrehan.com/projects?name=travi',
+          'https://ahmadalfrehan.org/projects?name=travi',
       date: 'date',
     ),
     ProjectsEntity(
@@ -48,7 +48,7 @@ class ProjectsController extends GetxController {
           '',
       image: 'assets/images/hew-logo.png',
       url:
-         'https://ahmadalfrehan.com/projects?name=hewaiti',
+         'https://ahmadalfrehan.org/projects?name=hewaiti',
       date: 'date',
     ),
     ProjectsEntity(
@@ -92,14 +92,14 @@ class ProjectsController extends GetxController {
       name: 'Busco classes',
       desc: '',
       image: 'assets/images/busco.jpg',
-      url: 'https://ahmadalfrehan.com/projects?name=buscocalsses',
+      url: 'https://ahmadalfrehan.org/projects?name=buscocalsses',
       date: 'date',
     ),
     ProjectsEntity(
       name: 'Helpco',
       desc: '',
       image: 'assets/images/helpcologo.png',
-      url: 'https://ahmadalfrehan.com/projects?name=helpco',
+      url: 'https://ahmadalfrehan.org/projects?name=helpco',
       date: 'date',
     ),
     ProjectsEntity(

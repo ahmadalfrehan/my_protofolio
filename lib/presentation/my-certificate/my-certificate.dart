@@ -100,7 +100,7 @@ class _MyCertificateState extends State<MyCertificate> {
                       'Issued nov 2023',
                       () {
                     if(kIsWeb) {
-                      js.context.callMethod('open', ['https://ahmadalfrehan.com/storage/images/Ahmad%20Al_Frehan%20-%20Intro%20to%20Machine%20Learning.png']);
+                      js.context.callMethod('open', ['https://ahmadalfrehan.org/storage/images/Ahmad%20Al_Frehan%20-%20Intro%20to%20Machine%20Learning.png']);
                     }
                   },
                 ),
@@ -127,7 +127,7 @@ class _MyCertificateState extends State<MyCertificate> {
                     'Issued nov 2023',
                     () {
                   if(kIsWeb) {
-                    js.context.callMethod('open', ['https://ahmadalfrehan.com/storage/images/Ahmad%20Al_Frehan%20-%20Intro%20to%20Machine%20Learning.png']);
+                    js.context.callMethod('open', ['https://ahmadalfrehan.org/storage/images/Ahmad%20Al_Frehan%20-%20Intro%20to%20Machine%20Learning.png']);
                   }
                 },
               ),

@@ -203,7 +203,7 @@ class Head extends StatelessWidget {
                             InkWell(
                               onTap: () {
                                 js.context.callMethod('open',
-                                    ['https://ahmadalfrehan.com/articles']);
+                                    ['https://ahmadalfrehan.org/articles']);
                               },
                               child: const Text(
                                 'Articles ->',
@@ -450,7 +450,7 @@ class Head extends StatelessWidget {
                       InkWell(
                         onTap: () {
                           js.context.callMethod(
-                              'open', ['https://ahmadalfrehan.com/articles']);
+                              'open', ['https://ahmadalfrehan.org/articles']);
                         },
                         child: const Text(
                           'Articles ->',
