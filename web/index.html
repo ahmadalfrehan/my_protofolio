@@ -93,74 +93,101 @@
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
   <style>
-    .shimmer-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-          background-color: #f0f0f0;
-      }
+    /* Multi-Directional Shimmer Animation */
+     @keyframes multi-directional-shimmer {
+         0% {
+             background-position: -800px 0;
+         }
+         100% {
+             background-position: 800px 0;
+         }
+     }
 
-      .shimmer-card {
-          width: 300px;
-          height: 200px;
-          background: linear-gradient(
-              to right,
-              #e0e0e0 10%,
-              #cfcfcf 30%,
-              #e0e0e0 50%
-          );
-          background-size: 800px 100%;
-          animation: shimmer-animation 2s infinite linear;
-          border-radius: 10px;
-          display: flex;
-          flex-direction: column;
-          padding: 20px;
-          box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
-      }
+     /* Color Variations for Shimmer Effect */
+     .shimmer-background {
+         background: linear-gradient(
+             to right,
+             #e0e0e0 10%,
+             #d0d0d0 30%,
+             #e0e0e0 50%,
+             #c0c0c0 70%,
+             #e0e0e0 100%
+         );
+         background-size: 1200px 100%;
+         animation: multi-directional-shimmer 1.5s infinite linear;
+     }
 
-      .shimmer-bar {
-          height: 20px;
-          background-color: #f0f0f0;
-          border-radius: 5px;
-          margin-bottom: 15px;
-      }
+     /* Shimmer Container and Card */
+     .shimmer-container {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+         background-color: #f7f7f7;
+     }
 
-      .shimmer-line {
-          height: 10px;
-          background-color: #f0f0f0;
-          border-radius: 5px;
-          margin-bottom: 10px;
-          width: 100%;
-      }
+     .shimmer-card {
+         width: 350px;
+         height: 250px;
+         background-color: #e0e0e0;
+         border-radius: 15px;
+         padding: 20px;
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+         display: flex;
+         flex-direction: column;
+     }
 
-      .shimmer-line.short {
-          width: 70%;
-      }
+     /* Simulate Content Layout */
+     .shimmer-bar {
+         height: 25px;
+         border-radius: 12px;
+         margin-bottom: 20px;
+         background: #f0f0f0;
+     }
 
-      @keyframes shimmer-animation {
-          0% {
-              background-position: -800px 0;
-          }
-          100% {
-              background-position: 800px 0;
-          }
-      }
+     .shimmer-image {
+         height: 100px;
+         width: 100px;
+         border-radius: 50%;
+         margin-bottom: 20px;
+         background: #f0f0f0;
+     }
+
+     .shimmer-line {
+         height: 15px;
+         border-radius: 7px;
+         margin-bottom: 10px;
+         background: #f0f0f0;
+     }
+
+     /* Add Shimmer Background to Elements */
+     .shimmer-bg {
+         background: linear-gradient(
+             to right,
+             #e0e0e0 10%,
+             #d0d0d0 30%,
+             #e0e0e0 50%,
+             #c0c0c0 70%,
+             #e0e0e0 100%
+         );
+         background-size: 1200px 100%;
+         animation: multi-directional-shimmer 1.5s infinite linear;
+     }
+
   </style>
   <!--</head>-->
 </head>
 <body>
-<!--<body>-->
 <div class="shimmer-container" id="shimmer-loading">
   <div class="shimmer-card">
-    <div class="shimmer-bar"></div>
-    <div class="shimmer-line"></div>
-    <div class="shimmer-line short"></div>
-    <div class="shimmer-line short"></div>
-    <div class="shimmer-line short"></div>
+    <div class="shimmer-bg shimmer-image"></div> <!-- Simulating an image -->
+    <div class="shimmer-bg shimmer-bar"></div> <!-- Simulating a heading -->
+    <div class="shimmer-bg shimmer-line"></div> <!-- Simulating a line of text -->
+    <div class="shimmer-bg shimmer-line short"></div> <!-- Shorter line of text -->
+    <div class="shimmer-bg shimmer-line short"></div> <!-- Another shorter line of text -->
   </div>
 </div>
-<script src="main.dart.js?version=1235" type="application/javascript"></script>
+<script src="main.dart.js?version=12356" type="application/javascript"></script>
 
 <script>
     window.addEventListener('load', function(ev) {

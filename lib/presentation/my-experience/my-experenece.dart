@@ -22,7 +22,9 @@ class MyExperience extends StatelessWidget {
             Container(
               height: MediaQuery.of(context).size.width > 480
                   ? MediaQuery.of(context).size.height / 4
-                  : MediaQuery.of(context).size.height / 2.5,
+                  : controller.selectedTitle.value == 0
+                      ? MediaQuery.of(context).size.height / 2.5
+                      : MediaQuery.of(context).size.height / 5.5,
               width: MediaQuery.of(context).size.width,
               decoration: const BoxDecoration(
                 color: colorHeadYellow,
