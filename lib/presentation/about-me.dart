@@ -1,9 +1,11 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:protofolio/config/textStyle.dart';
 
 import '../config/about.dart';
+import 'head/getx/headcontroller.dart';
 
 class AboutMe extends StatefulWidget {
   const AboutMe({Key? key}) : super(key: key);
@@ -19,6 +21,7 @@ class _AboutMeState extends State<AboutMe> with SingleTickerProviderStateMixin {
   AnimationController? _controller;
   Animation<double>? animation;
 
+  final controller = Get.put(HeadController());
   @override
   void initState() {
     _controller = AnimationController(
@@ -54,10 +57,10 @@ class _AboutMeState extends State<AboutMe> with SingleTickerProviderStateMixin {
           Expanded(
             child: Column(
               children: [
-                Row(
+                const Row(
                   children: [
                     Stack(
-                      children: const [
+                      children: [
                         Text(
                           'About me',
                           style: TextStyleMyApp.textStyle7,
@@ -75,11 +78,15 @@ class _AboutMeState extends State<AboutMe> with SingleTickerProviderStateMixin {
                     Expanded(
                       child: Semantics(
                         label: about,
-                        child: const SelectableText(
-                          // animatedTexts: [
-                          //   TyperAnimatedText(
-                          about,
-                          style: TextStyleMyApp.textStyle6,
+                        child: Obx(
+                          () => SelectableText(
+                            // animatedTexts: [
+                            //   TyperAnimatedText(
+                            controller.selectedTitle.value == 0
+                                ? about
+                                : aboutAI,
+                            style: TextStyleMyApp.textStyle6,
+                          ),
                         ),
                       ),
                       // ],

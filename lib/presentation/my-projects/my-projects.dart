@@ -6,10 +6,13 @@ import 'package:get/get.dart';
 import 'package:protofolio/presentation/my-projects/getx/projects-controller.dart';
 
 import '../../config/style.dart';
+import '../head/getx/headcontroller.dart';
 
 class MyProjects extends StatelessWidget {
-  const MyProjects({Key? key}) : super(key: key);
 
+   MyProjects({Key? key}) : super(key: key);
+
+  final controller  = Get.put(HeadController());
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,6 +49,7 @@ class MyProjects extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 10),
+          if(controller.selectedTitle.value==0)
           SizedBox(
             width: MediaQuery.of(context).size.width / 1.5,
             child: GridView.builder(

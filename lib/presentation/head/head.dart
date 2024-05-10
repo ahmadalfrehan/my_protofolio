@@ -3,14 +3,16 @@ import 'dart:js' as js;
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:protofolio/config/style.dart';
+import 'package:protofolio/presentation/head/getx/headcontroller.dart';
 import 'package:protofolio/presentation/head/projectsMine.dart';
 
 import '../../config/textStyle.dart';
 
 class Head extends StatelessWidget {
-  const Head({Key? key}) : super(key: key);
-
+  Head({Key? key}) : super(key: key);
+  final controller = Get.put(HeadController());
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -116,38 +118,42 @@ class Head extends StatelessWidget {
                             InkWell(
                                 onTap: () {
                                   if (kIsWeb) {
-                                    js.context.callMethod('open', ['https://play.google.com/store/apps/dev?id=8247791016528345285&hl=it&gl=US']);
-                            }
-                          },
-                          child: Image.asset(
-                            'assets/images/google-play.png',
-                            width: 23,
+                                    js.context.callMethod('open', [
+                                      'https://play.google.com/store/apps/dev?id=8247791016528345285&hl=it&gl=US'
+                                    ]);
+                                  }
+                                },
+                                child: Image.asset(
+                                  'assets/images/google-play.png',
+                                  width: 23,
                             height: 23,
                             // color: Colors.white,
                           )),
                       const SizedBox(width: 20),
                       InkWell(
                           onTap: () {
-                            if(kIsWeb) {
-                              js.context.callMethod('open', ['https://facebook.com/ahmadalfrehan']);
-                            }
-                          },
-                          child: Image.asset(
-                            'assets/images/facebook.png',
-                            width: 23,
+                                  if (kIsWeb) {
+                                    js.context.callMethod('open',
+                                        ['https://facebook.com/ahmadalfrehan']);
+                                  }
+                                },
+                                child: Image.asset(
+                                  'assets/images/facebook.png',
+                                  width: 23,
                             height: 23,
                             // color: Colors.white,
                           )),
                       const SizedBox(width: 20),
                       InkWell(
                           onTap: () {
-                            if(kIsWeb) {
-                              js.context.callMethod('open', ['https://t.me/ahmadalfrehan']);
-                            }
-                          },
-                          child: Image.asset(
-                            'assets/images/telegram.png',
-                            width: 23,
+                                  if (kIsWeb) {
+                                    js.context.callMethod(
+                                        'open', ['https://t.me/ahmadalfrehan']);
+                                  }
+                                },
+                                child: Image.asset(
+                                  'assets/images/telegram.png',
+                                  width: 23,
                             height: 23,
                             // color: Colors.white,
                           )),
@@ -155,13 +161,13 @@ class Head extends StatelessWidget {
                       InkWell(
                         onTap: () {
                           if (kIsWeb) {
-                            js.context
-                                .callMethod('open', ['https://wa.me/963982867881']);
-                          }
-                        },
-                        child: Image.asset(
-                          'assets/images/wa.png',
-                          width: 23,
+                                  js.context.callMethod(
+                                      'open', ['https://wa.me/963982867881']);
+                                }
+                              },
+                              child: Image.asset(
+                                'assets/images/wa.png',
+                                width: 23,
                           height: 23,
                         ),
                       ),
@@ -171,21 +177,23 @@ class Head extends StatelessWidget {
 
                       InkWell(
                           onTap: () {
-                            if(kIsWeb) {
-                              js.context.callMethod('open', ['https://github.com/ahmadalfrehan']);
-                            }
-                          },
-                          child: Image.asset(
-                            'assets/images/git.png',
-                            width: 23,
+                                  if (kIsWeb) {
+                                    js.context.callMethod('open',
+                                        ['https://github.com/ahmadalfrehan']);
+                                  }
+                                },
+                                child: Image.asset(
+                                  'assets/images/git.png',
+                                  width: 23,
                             height: 23,
                             color: Colors.white,
                           )),
                       const SizedBox(width: 20),
                       InkWell(
                           onTap: () {
-                            if(kIsWeb) {
-                              js.context.callMethod('open', ['https://gitlab.com/ahmadalfrehan']);
+                                  if (kIsWeb) {
+                                    js.context.callMethod('open',
+                                        ['https://gitlab.com/ahmadalfrehan']);
                                   }
                                 },
                                 child: Image.asset(
@@ -196,28 +204,34 @@ class Head extends StatelessWidget {
                                 )),
                           ],
                         ),
-
                         const SizedBox(height: 40),
-                        Row(
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                js.context.callMethod('open',
-                                    ['https://ahmadalfrehan.org/articles']);
-                              },
-                              child: const Text(
-                                'Articles ->',
-                                style: TextStyleMyApp.textStyle3,
+                        Obx(
+                          () => Row(
+                            children: [
+                              _titleInRow(
+                                'Flutter',
+                                () {
+                                  controller.selectedTitle.value = 0;
+                                },
+                                controller.selectedTitle.value == 0,
                               ),
-                            )
-                          ],
+                              const SizedBox(width: 10),
+                              _titleInRow('Artificial Intelligence', () {
+                                controller.selectedTitle.value = 1;
+                              }, controller.selectedTitle.value == 1),
+                              const SizedBox(width: 10),
+                              _titleInRow('Advice', () {
+                                controller.selectedTitle.value = 2;
+                              }, controller.selectedTitle.value == 2),
+                            ],
+                          ),
                         ),
                         const SizedBox(height: 30)
                       ],
-              ),
-            ),
-            Expanded(
-              child: Container(
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
                 height:
                           MediaQuery.of(context).size.width <= 480 ? 150 : 400,
                       width:
@@ -229,11 +243,11 @@ class Head extends StatelessWidget {
                         ),
                       ),
                       alignment: Alignment.bottomCenter,
-              ),
-            ),
-            const SizedBox(width: 10),
-            _verticalCircles(),
-          ],
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  _verticalCircles(),
+                ],
         ),
       )
           : Padding(
@@ -256,11 +270,11 @@ class Head extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                        ],
-                      ),
-                      const SizedBox(height: 7),
-                      Row(
-                        children: [
+                              ],
+                            ),
+                            const SizedBox(height: 7),
+                            Row(
+                              children: [
                           Expanded(
                                   child: Semantics(
                                     label: 'I\'m Ahmad Al_Frehan',
@@ -270,22 +284,22 @@ class Head extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                        ],
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                    ],
-                  ),
-                ),
                 Expanded(
                   child: Container(
-                    height: MediaQuery.of(context).size.width <= 480
-                        ? 150
-                        : 400,
-                    width: MediaQuery.of(context).size.width <= 480
-                        ? 150
-                        : 400,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      boxShadow: const [
+                          height: MediaQuery.of(context).size.width <= 480
+                              ? 150
+                              : 400,
+                          width: MediaQuery.of(context).size.width <= 480
+                              ? 150
+                              : 400,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: const [
                         BoxShadow(
                             color: Color.fromRGBO(0, 0, 0, 0.21),
                             spreadRadius: 0,
@@ -367,36 +381,38 @@ class Head extends StatelessWidget {
                                 'https://play.google.com/store/apps/dev?id=8247791016528345285&hl=it&gl=US'
                               ]);
                             }
-                    },
-                    child: Image.asset(
-                      'assets/images/google-play.png',
-                      width: 23,
+                          },
+                          child: Image.asset(
+                            'assets/images/google-play.png',
+                            width: 23,
+                            height: 23,
+                      // color: Colors.white,
+                    )),
+                const SizedBox(width: 20),
+                InkWell(
+                    onTap: () {
+                            if (kIsWeb) {
+                              js.context.callMethod('open',
+                                  ['https://facebook.com/ahmadalfrehan']);
+                            }
+                          },
+                          child: Image.asset(
+                            'assets/images/facebook.png',
+                            width: 23,
                       height: 23,
                       // color: Colors.white,
                     )),
                 const SizedBox(width: 20),
                 InkWell(
                     onTap: () {
-                      if(kIsWeb) {
-                        js.context.callMethod('open', ['https://facebook.com/ahmadalfrehan']);
-                      }
-                    },
-                    child: Image.asset(
-                      'assets/images/facebook.png',
-                      width: 23,
-                      height: 23,
-                      // color: Colors.white,
-                    )),
-                const SizedBox(width: 20),
-                InkWell(
-                    onTap: () {
-                      if(kIsWeb) {
-                        js.context.callMethod('open', ['https://t.me/ahmadalfrehan']);
-                      }
-                    },
-                    child: Image.asset(
-                      'assets/images/telegram.png',
-                      width: 23,
+                            if (kIsWeb) {
+                              js.context.callMethod(
+                                  'open', ['https://t.me/ahmadalfrehan']);
+                            }
+                          },
+                          child: Image.asset(
+                            'assets/images/telegram.png',
+                            width: 23,
                       height: 23,
                       // color: Colors.white,
                     )),
@@ -419,21 +435,23 @@ class Head extends StatelessWidget {
 
                 InkWell(
                     onTap: () {
-                      if(kIsWeb) {
-                        js.context.callMethod('open', ['https://github.com/ahmadalfrehan']);
-                      }
-                    },
-                    child: Image.asset(
-                      'assets/images/git.png',
-                      width: 23,
+                            if (kIsWeb) {
+                              js.context.callMethod(
+                                  'open', ['https://github.com/ahmadalfrehan']);
+                            }
+                          },
+                          child: Image.asset(
+                            'assets/images/git.png',
+                            width: 23,
                       height: 23,
                       color: Colors.white,
                     )),
                 const SizedBox(width: 20),
                 InkWell(
                     onTap: () {
-                      if(kIsWeb) {
-                        js.context.callMethod('open', ['https://gitlab.com/ahmadalfrehan']);
+                            if (kIsWeb) {
+                              js.context.callMethod(
+                                  'open', ['https://gitlab.com/ahmadalfrehan']);
                             }
                           },
                           child: Image.asset(
@@ -445,24 +463,39 @@ class Head extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 20),
-                  Row(
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          js.context.callMethod(
-                              'open', ['https://ahmadalfrehan.org/articles']);
-                        },
-                        child: const Text(
-                          'Articles ->',
-                          style: TextStyleMyApp.textStyle3,
+                  Obx(
+                    () => Row(
+                      children: [
+                        _titleInRow(
+                          'Flutter',
+                          () {
+                            controller.selectedTitle.value = 0;
+                          },
+                          controller.selectedTitle.value == 0,
                         ),
-                      )
-                    ],
+                        const SizedBox(width: 10),
+                        _titleInRow(
+                          'Artificial Intelligence',
+                          () {
+                            controller.selectedTitle.value = 1;
+                          },
+                          controller.selectedTitle.value == 1,
+                        ),
+                        const SizedBox(width: 10),
+                        _titleInRow(
+                          'Advice',
+                          () {
+                            controller.selectedTitle.value = 2;
+                          },
+                          controller.selectedTitle.value == 2,
+                        ),
+                      ],
+                    ),
                   ),
                   const SizedBox(height: 30)
                 ],
-        ),
-      ),
+              ),
+            ),
     );
   }
 
@@ -478,7 +511,24 @@ class Head extends StatelessWidget {
     );
   }
 
-// _projectsMine( required BuildContext context}) {
-//   return
-// }
+  _titleInRow(String title, Function() onPress, bool isSelected) {
+    return Container(
+      padding: const EdgeInsets.only(top: 0,bottom: 0,left: 5,right: 5),
+      decoration: isSelected
+          ? BoxDecoration(
+              color: Colors.black26,
+              borderRadius: BorderRadius.circular(40),
+              border: Border.all(color: colorHeadYellow),
+            )
+          : null,
+      child: InkWell(
+        onTap: onPress,
+        child: Text(
+          title,
+          style:isSelected
+              ?TextStyleMyApp.textStyle31: TextStyleMyApp.textStyle3,
+        ),
+      ),
+    );
+  }
 }

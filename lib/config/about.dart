@@ -14,8 +14,8 @@ const String about =
     '-Experience in dealing with Google Play console accounts, integrating Google Pay for secure transactions, and utilizing Google Maps APIs for incorporating location-based features. I have also worked with Firebase services, including FCM (Firebase Cloud Messaging) and Firestore, to enhance app functionalities and real-time data storage.\n\n\n'
     'If you are looking for a highly skilled Flutter developer with expertise in batch and shell scripting, authentication integration (Google, Facebook, Twitter), and Flutter web development, along with a strong focus on clean code, professionalism, excellent communication skills, and delivering the highest code quality, then I am the ideal candidate for your project.\n';
 
-const String aboutMe =
-    'I am A human who loves mobile development I am A human who loves mobile developmentI am A human who loves mobile developmentI am A human who loves mobile development';
+const String aboutAI =
+    'I\'m an AI student! I build cool projects with AI and connect them to apps using FastAPI. I\'ve taken courses in machine learning and generative AI, and now I\'m learning deep learning.';
 
  List<Skill> mySkills = [
   Skill(image: 'assets/images/Machine-learning-logo.png', skill: 'Machine Learning'),

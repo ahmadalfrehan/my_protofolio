@@ -4,10 +4,12 @@ import 'package:protofolio/config/debug/screen-stability.dart';
 
 import '../../config/style.dart';
 import '../../config/textStyle.dart';
+import '../head/getx/headcontroller.dart';
 
 class MyExperience extends StatelessWidget {
-  const MyExperience({Key? key}) : super(key: key);
+   MyExperience({Key? key}) : super(key: key);
 
+  final controller  = Get.put(HeadController());
   @override
   Widget build(BuildContext context) {
     var image =
@@ -72,6 +74,7 @@ class MyExperience extends StatelessWidget {
                 ),
               ),
             ),
+            if(controller.selectedTitle.value==0)
             Column(
               children: [
                 SizedBox(height: ScreenStability.height(110)),

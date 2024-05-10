@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
       title: 'Ahmad Al_Frehan',
       debugShowCheckedModeBanner: false,
       theme: MyAppTheme.myTheme,
-      home: const MyProtofolio(),
+      home: MyProtofolio(),
     );
   }
 }
